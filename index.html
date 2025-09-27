@@ -3,10 +3,23 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
   <title>Indana Aditya's portfolio website</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Professional portfolio of Indana Aditya - Cloud Developer, Frontend Developer, and AI/ML Engineer showcasing projects, skills, and experience." name="description">
+  <meta content="Indana Aditya, portfolio, Cloud Developer, Frontend Developer, AI/ML Engineer, AWS, JavaScript, Python, React, Web Development" name="keywords">
+  
+  <!-- Mobile-specific meta tags -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Indana Aditya">
+  <meta name="theme-color" content="#007bff">
+  <meta name="msapplication-TileColor" content="#007bff">
+  
+  <!-- Preconnect to external domains for better performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -43,42 +56,80 @@
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="#skills"><i class="bi bi-tools navicon"></i><span>Skills</span></a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="#projects"><i class="bi bi-briefcase navicon"></i><span>Projects</span></a></li>
+        <li><a href="#certifications"><i class="bi bi-award navicon"></i><span>Certifications</span></a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
       </ul>
     </nav>
 
   </header>
 
+  <!-- Dark Mode Toggle - Bottom Right Corner -->
+  <div class="theme-toggle">
+    <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+      <i class="bi bi-sun-fill theme-icon"></i>
+    </button>
+  </div>
+
+  <!-- Reading Progress Bar (Mobile-friendly) -->
+  <div class="reading-progress">
+    <div class="reading-progress-bar"></div>
+  </div>
+  
+  <!-- Section Navigation Indicators (Desktop only) -->
+  <div class="section-indicator">
+    <div class="section-dot active" data-section="hero" title="Home (1)"></div>
+    <div class="section-dot" data-section="about" title="About (2)"></div>
+    <div class="section-dot" data-section="skills" title="Skills (3)"></div>
+    <div class="section-dot" data-section="resume" title="Resume (4)"></div>
+    <div class="section-dot" data-section="projects" title="Projects (5)"></div>
+    <div class="section-dot" data-section="certifications" title="Certifications (6)"></div>
+    <div class="section-dot" data-section="contact" title="Contact (7)"></div>
+  </div>
+
   <main class="main">
 
 <!-- Hero Section -->
+
 <section id="hero" class="hero section light-background position-relative" style="background: url('assets/img/hero-bg.jpg') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center;">
 
   <div class="container" data-aos="zoom-out">
     <div class="row align-items-center">
       
-      <!-- Left Column: Text Content -->
-      <div class="col-lg-7">
-        <h2>Indana Aditya</h2>
-        <p>
-          I'm <span class="typed" data-typed-items="Cloud Developer,Front-end Developer, AI/ML Engineer, Programmer">Cloud Developer</span>
-          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-        </p>
-
-        <div class="social-links mt-3">
-          <a href="https://x.com/aditya_indana"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=100025828133340"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/ad_itya626/"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/aditya-indana-899734216/"><i class="bi bi-linkedin"></i></a>
+      <!-- Mobile: Profile Image First (will be reordered on larger screens) -->
+      <div class="col-lg-5 order-lg-2 text-center animate-fade-in-right mb-4 mb-lg-0">
+        <div class="hero-profile-img animate-float">
+          <img src="assets/img/profile-img.jpg" alt="Indana Aditya - Professional Profile Photo" class="img-fluid rounded-circle shadow-lg animate-scale-in stagger-2" loading="eager">
         </div>
       </div>
 
-      <!-- Right Column: Resume Button -->
-      <div class="col-lg-5 text-lg-end text-center mt-4 mt-lg-0">
-        <a href="https://drive.google.com/file/d/1O19dRy56tUnjJ-Y1vV2Kfe8A9obXty-9/view?usp=drive_link" target="_blank" class="btn btn-primary btn-lg">
-          View My Resume
-        </a>
+      <!-- Text Content (will be reordered on larger screens) -->
+      <div class="col-lg-7 order-lg-1 animate-fade-in-left text-center text-lg-start">
+        <h1 class="animate-fade-in-up stagger-1 mb-3">Indana Aditya</h1>
+        <p class="animate-fade-in-up stagger-2 mb-4 fs-5">
+          <span class="text-primary fw-bold">I'm a</span> 
+          <span class="typed" data-typed-items="Cloud Developer,Frontend Developer,AI/ML Engineer,Full Stack Developer" role="img" aria-label="Animated job titles">Cloud Developer</span>
+          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
+        </p>
+
+        <div class="social-links animate-fade-in-up stagger-3 mb-4 justify-content-center justify-content-lg-start">
+          <a href="https://x.com/aditya_indana" class="stagger-1" aria-label="Follow on Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100025828133340" class="stagger-2" aria-label="Connect on Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/ad_itya626/" class="stagger-3" aria-label="Follow on Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/aditya-indana-899734216/" class="stagger-4" aria-label="Connect on LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/22MH1A42G1/" class="stagger-5" aria-label="View GitHub profile" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+        </div>
+
+        <div class="hero-cta animate-bounce-in stagger-4 d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+          <a href="#contact" class="btn btn-primary btn-lg stagger-1" role="button">
+            <i class="bi bi-envelope-fill me-2"></i>Get In Touch
+          </a>
+          <a href="https://drive.google.com/file/d/1O19dRy56tUnjJ-Y1vV2Kfe8A9obXty-9/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg stagger-2" role="button">
+            <i class="bi bi-download"></i> Download CV
+          </a>
+        </div>
       </div>
 
     </div>
@@ -112,7 +163,7 @@
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>17 October 2004</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 99893 29510</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><p><a href="tel:+919989329510">+91 xxxxxxx510</a></p></span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Andhra Pradesh, India</span></li>
                 </ul>
               </div>
@@ -120,7 +171,7 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>20</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B-Tech</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>adityaindana@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><p><a href="mailto:adityaindana@gmail.com">adityaindana@gmail.com</a></p></span></li>
                 </ul>
               </div>
             </div>
@@ -135,79 +186,79 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Experienced AWS Cloud Developer with expertise in EC2, S3, VPC, Lambda, and other core AWS services. Proficient in Front-end Development using HTML, CSS, JavaScript, and Bootstrap. Strong foundation in Networking (CCNA), DevOps tools (Docker, Kubernetes, Terraform), and AI/ML. Skilled in Python, Java, C, along with Data Visualization (R, Python) and Databases (MySQL, MongoDB).</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Front-end Development (Html, Css, Javascript, Bootstrap)</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>AWS CLOUD (AWS Ec2, S3, VPC, Lambda, Route53, Cloud9 .,etc)</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            <div class="progress">
-              <span class="skill"><span>CCNA: Networking (Routing, Switching, Wireless Networking)</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            <div class="progress">
-              <span class="skill"><span>DevOps tools (selenium, jenkins, docker, kubernetes, ansible, terraform)</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Data Visualization (R, Python)</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Programming (C, Python, Java)</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            <div class="progress">
-              <span class="skill"><span>Artificial Intelligence, Machine Learning and Deep Learning</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            <div class="progress">
-              <span class="skill"><span>DataBase (MySQL and MongoDB)</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-          </div>
-
-        </div>
-
+      <div class="container section-title animate-on-scroll" data-aos="fade-up">
+        <h2 class="animate-slide-in-bottom">Skills</h2>
+        <p class="animate-fade-in-up stagger-1">Explore my technical skills categorized for clarity. Each skill features a modern, animated progress bar and icon.</p>
       </div>
-
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+          <!-- Frontend Card -->
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-1" role="article" tabindex="0">
+              <div class="card-body text-center">
+                <div class="skill-icon mb-3 animate-pulse" aria-hidden="true"><i class="bi bi-code-slash"></i></div>
+                <h5 class="card-title mb-2">Frontend Development</h5>
+                <p class="card-text small text-muted mb-3">HTML5, CSS3, JavaScript ES6+, Bootstrap 5, Responsive Design</p>
+                <div class="progress-bar-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-label="Frontend Development skill level: 80%">
+                  <div class="progress-bar skill-bar bg-primary" data-skill="80"><span>80%</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Cloud Card -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-2">
+              <div class="card-body text-center">
+                <div class="skill-icon mb-2 animate-pulse"><i class="bi bi-cloud"></i></div>
+                <h5 class="card-title">Cloud</h5>
+                <p class="card-text">AWS (EC2, S3, VPC, Lambda, etc.)</p>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar skill-bar bg-info" data-skill="80"><span>80%</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Backend & DevOps Card -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-3">
+              <div class="card-body text-center">
+                <div class="skill-icon mb-2 animate-pulse"><i class="bi bi-hdd-network"></i></div>
+                <h5 class="card-title">Backend & DevOps</h5>
+                <p class="card-text">Python, Java, Docker, Kubernetes, Terraform</p>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar skill-bar bg-success" data-skill="75"><span>75%</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- AI/ML & Data Card -->
+          <div class="col-lg-6 col-md-6">
+            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-4">
+              <div class="card-body text-center">
+                <div class="skill-icon mb-2 animate-pulse"><i class="bi bi-robot"></i></div>
+                <h5 class="card-title">AI/ML & Data</h5>
+                <p class="card-text">AI, ML, Deep Learning, Data Visualization (R, Python)</p>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar skill-bar bg-warning" data-skill="75"><span>75%</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Database & Networking Card -->
+          <div class="col-lg-6 col-md-6">
+            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-5">
+              <div class="card-body text-center">
+                <div class="skill-icon mb-2 animate-pulse"><i class="bi bi-diagram-3"></i></div>
+                <h5 class="card-title">Database & Networking</h5>
+                <p class="card-text">MySQL, MongoDB, CCNA (Routing, Switching, Wireless)</p>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar skill-bar bg-danger" data-skill="70"><span>70%</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section><!-- /Skills Section -->
 
     <!-- Resume Section -->
@@ -218,7 +269,12 @@
         <h2>Resume</h2>
         <p>I am a Cloud Developer & Front-end Developer with expertise in AWS, Front-end development, and AI/ML. Currently pursuing my B.Tech, I have worked on various projects involving AWS cloud services, JavaScript, and machine learning.</p>
       </div><!-- End Section Title -->
-
+       <!-- Right Column: Resume Button -->
+      <div class="col-lg-5 text-lg-end text-center mt-4 mt-lg-0">
+        click here 👉 <a href="https://drive.google.com/file/d/1O19dRy56tUnjJ-Y1vV2Kfe8A9obXty-9/view?usp=drive_link" target="_blank" class="btn btn-primary btn-lg">
+          View My Resume
+        </a>
+      </div>
       <div class="container">
 
         <div class="row">
@@ -299,37 +355,187 @@
       </div>
 
     </section><!-- /Resume Section -->
+<!-- Projects Section -->
+     <!-- Portfolio/Projects Section -->
+    <section id="projects" class="projects section">
+      <div class="container section-title animate-on-scroll" data-aos="fade-up">
+        <h2 class="animate-slide-in-bottom">Projects</h2>
+        <p class="animate-fade-in-up stagger-1">Here are some of my featured projects. Explore the cards below for details, tech stacks, GitHub links, and live demos.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <!-- Project Card 1 -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm animate-on-scroll stagger-1">
+              <img src="assets/img/project1.jpg" class="card-img-top" alt="Project 1">
+              <div class="card-body">
+                <h5 class="card-title">AWS Automation With Boto3</h5>
+                <p class="mb-2"><strong>Tech Stack:</strong> AWS-EC2, AWS-S3, AWS-RDS, streamlit, python-dotenv, Boto3</p>
+                <p><b>Note:</b> This project requires AWS credentials to be configured locally.(Backend not deployed)</p>
+                <a href="https://github.com/22MH1A42G1/Aws-Automation-With-Boto3" target="_blank" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-github"></i> GitHub</a>
+                <a href="https://aws-automation-with-boto3.streamlit.app/" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm animate-on-scroll stagger-2">
+              <img src="assets/img/Project2.jpg" class="card-img-top" alt="Project 2">
+              <div class="card-body">
+                <h5 class="card-title">AI Nutritionist App</h5>
+                <p class="mb-2"><strong>Tech Stack:</strong> Python, generativeai, python-dotenv, streamlit</p>
+                <p><b>Note:</b> This project requires Google Gemini API credentials to be configured.(deployment Completed)</p>
+                <a href="https://github.com/22MH1A42G1/AI_Nutritionist_App" target="_blank" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-github"></i> GitHub</a>
+                <a href="https://ai-nutritionistapp.streamlit.app/" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm animate-on-scroll stagger-3">
+              <img src="assets/img/project3.jpg" class="card-img-top" alt="Project 3">
+              <div class="card-body">
+                <h5 class="card-title">AWS-Serverless-Sentiment-Analysis</h5>
+                <p class="mb-2"><strong>Tech Stack:</strong> AWS-IAM, AWS-Comprehend, AWS-Lambda, AWS-API Gateway, Postman, HTML, CSS</p>
+                <p><b>Note:</b> This project requires AWS credentials to be configured locally.(Backend not deployed)</b></p>
+                <a href="https://github.com/22MH1A42G1/AWS-Serverless-Sentiment-Analysis" target="_blank" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-github"></i> GitHub</a>
+                <a href="https://22mh1a42g1.github.io/AWS-Serverless-Sentiment-Analysis/" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 4 
+           <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/img/project3.jpg" class="card-img-top" alt="Project 3">
+              <div class="card-body">
+                <h5 class="card-title">Personal Portfolio Website</h5>
+                <p class="mb-2"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Bootstrap</p>
+                <a href="https://github.com/22MH1A42G1/MYportfolio" target="_blank" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-github"></i> GitHub</a>
+                <a href="https://adityaindana.tech" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+              </div>
+            </div>
+          </div> 
+          <!-- Project Card 5 
+           <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/img/project3.jpg" class="card-img-top" alt="Project 3">
+              <div class="card-body">
+                <h5 class="card-title">Personal Portfolio Website</h5>
+                <p class="card-text">A responsive and modern portfolio website built with HTML, CSS, JavaScript, and Bootstrap.</p>
+                <p class="mb-2"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Bootstrap</p>
+                <a href="https://github.com/22MH1A42G1/MYportfolio" target="_blank" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-github"></i> GitHub</a>              
+                <a href="https://adityaindana.tech" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a> 
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 6 
+           <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/img/project3.jpg" class="card-img-top" alt="Project 3">
+              <div class="card-body">
+                <h5 class="card-title">Personal Portfolio Website</h5>
+                <p class="card-text">A responsive and modern portfolio website built with HTML, CSS, JavaScript, and Bootstrap.</p>
+                <p class="mb-2"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Bootstrap</p>
+                <a href="https://github.com/22MH1A42G1/MYportfolio" target="_blank" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-github"></i> GitHub</a>              
+                <a href="https://adityaindana.tech" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a> 
+              </div>            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Projects Section -->
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Certifications</h2>
+        <p>Here are some of my certifications that validate my skills and knowledge in various domains
+        </p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <!-- Certification Card 1 -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/img/certification1.jpg" class="card-img-top" alt="Certification 1">
+              <div class="card-body">
+                <h5 class="card-title">AWS Certified Developer - Associate</h5>
+                <p class="card-text">Credential ID: 11684f25-be5d-4c20-8604-bbc99fa3a9e8</p>
+                <p class="card-text"><a href="https://www.credly.com/badges/11684f25-be5d-4c20-8604-bbc99fa3a9e8" target="_blank">Digital Badge</p>
+                <a href="https://drive.google.com/file/d/1QXr3vmvPBRWYhdK-QJg48wlf4TKFLZ-F/view" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> View Certificate</a>
+              </div>
+            </div>
+          </div>
+          <!-- Certification Card 2 -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/img/certification2.jpg" class="card-img-top" alt="Certification 2">
+              <div class="card-body">
+                <h5 class="card-title">IT Specialist - Java</h5>
+                <p class="card-text">Credential ID: BVzU-s4Na</p>
+                <p class="card-text"><a href="https://www.credly.com/badges/2f4a88ec-b079-411f-bffc-c01236d36134/public_url" target="_blank">Digital Badge</p>
+                <a href="https://drive.google.com/file/d/1Q_qFc9IunXGwFXeQS8N5PCSBOLklEzhQ/view" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> View Certificate</a>
+              </div>
+            </div>
+          </div>
+          <!-- Certification Card 3 -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/img/certification3.jpg" class="card-img-top" alt="Certification 3">
+              <div class="card-body">
+                <h5 class="card-title">IT Specialist - Python</h5>
+                <p class="card-text">Credential ID: Hw2n-XMzs</p>
+                <a href="https://drive.google.com/file/d/1Qhsoehluieq3rGREutAor-tQpwu-Yyfr/view" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> View Certificate</a>
+              </div>
+            </div>
+          </div>
+          <!-- Certification Card 4 -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/img/certification4.jpg" class="card-img-top" alt="Certification 4">
+              <div class="card-body">
+                <h5 class="card-title">IT Specialist - HTML CSS</h5>
+                <p class="card-text">Credential ID: wvR7n-H94M</p>
+                <p class="card-text"><a href="https://www.credly.com/badges/e637a722-40a0-4192-8a3b-9dfd0c9e04a1/public_url" target="_blank">Digital Badge</p>
+                <a href="https://drive.google.com/file/d/1QlS6bTTGvmdkrupQyDBm1xfPVBxEMAEV/view" target="_blank" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right"></i> View Certificate</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Certifications Section --> 
 
 <!-- Contact Section -->
 <section id="contact" class="contact section">
   <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>I am here to assist you with any inquiries. Feel free to reach out to me!</p>
+  <div class="container section-title animate-on-scroll" data-aos="fade-up">
+    <h2 class="animate-slide-in-bottom">Contact</h2>
+    <p class="animate-fade-in-up stagger-1">I am here to assist you with any inquiries. Feel free to reach out to me!</p>
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade" data-aos-delay="100">
     <div class="row gy-4">
       <!-- Contact Info -->
       <div class="col-lg-4">
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-          <i class="bi bi-geo-alt flex-shrink-0"></i>
+        <div class="info-item d-flex animate-on-scroll stagger-1" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-geo-alt flex-shrink-0 animate-pulse"></i>
           <div>
             <h3>Address</h3>
-            <p>Bendapudi, Andhra Pradesh, India</p>
+            <p>Andhra Pradesh, India</p>
           </div>
         </div><!-- End Info Item -->
 
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-          <i class="bi bi-telephone flex-shrink-0"></i>
+        <div class="info-item d-flex animate-on-scroll stagger-2" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-telephone flex-shrink-0 animate-pulse"></i>
           <div>
             <h3>Phone</h3>
-            <p><a href="tel:+919989329510">+91 9989329510</a></p>
+            <p><a href="tel:+919989329510">+91 xxxxxxx510</a></p>
           </div>
         </div><!-- End Info Item -->
 
-        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-          <i class="bi bi-envelope flex-shrink-0"></i>
+        <div class="info-item d-flex animate-on-scroll stagger-3" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-envelope flex-shrink-0 animate-pulse"></i>
           <div>
             <h3>Email</h3>
             <p><a href="mailto:adityaindana@gmail.com">adityaindana@gmail.com</a></p>
@@ -339,19 +545,27 @@
 
       <!-- Contact Form -->
       <div class="col-lg-8">
-        <form id="contactForm" action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        <form id="contactForm" action="forms/contact.php" method="post" class="php-email-form animate-on-scroll" data-aos="fade-up" data-aos-delay="200" novalidate>
           <div class="row gy-4">
             <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+              <label for="contact-name" class="visually-hidden">Your Name</label>
+              <input type="text" id="contact-name" name="name" class="form-control animate-on-scroll stagger-1" placeholder="Your Name" required autocomplete="name" inputmode="text" aria-describedby="name-error">
+              <div id="name-error" class="invalid-feedback"></div>
             </div>
             <div class="col-md-6">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+              <label for="contact-email" class="visually-hidden">Your Email</label>
+              <input type="email" id="contact-email" class="form-control animate-on-scroll stagger-2" name="email" placeholder="Your Email" required autocomplete="email" inputmode="email" aria-describedby="email-error">
+              <div id="email-error" class="invalid-feedback"></div>
             </div>
             <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+              <label for="contact-subject" class="visually-hidden">Subject</label>
+              <input type="text" id="contact-subject" class="form-control animate-on-scroll stagger-3" name="subject" placeholder="Subject" required autocomplete="off" inputmode="text" aria-describedby="subject-error">
+              <div id="subject-error" class="invalid-feedback"></div>
             </div>
             <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+              <label for="contact-message" class="visually-hidden">Message</label>
+              <textarea id="contact-message" class="form-control animate-on-scroll stagger-4" name="message" rows="6" placeholder="Message (minimum 10 characters)" required aria-describedby="message-error" minlength="10"></textarea>
+              <div id="message-error" class="invalid-feedback"></div>
             </div>
 
             <!-- Honeypot Field (Hidden) -->
@@ -362,7 +576,7 @@
             <div class="col-md-12 text-center">
               <div id="loadingMessage" style="display: none; color: blue;">Sending...</div>
               <div id="successMessage" style="display: none; color: green;">Your message has been sent. Thank you!</div>
-              <button type="submit" class="btn btn-primary">Send Message</button>
+              <button type="submit" class="btn btn-primary animate-on-scroll stagger-5">Send Message</button>
             </div>
           </div>
         </form>
@@ -371,22 +585,160 @@
   </div>
 </section><!-- End Contact Section -->
 
-<!-- JavaScript for Delay -->
+<!-- Enhanced Contact Form JavaScript -->
 <script>
   document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
 
-    // Show the loading message
-    document.getElementById("loadingMessage").style.display = "block";
-    document.getElementById("successMessage").style.display = "none";
+    // Get form elements
+    const form = event.target;
+    const formData = new FormData(form);
+    const loadingMessage = document.getElementById("loadingMessage");
+    const successMessage = document.getElementById("successMessage");
+    const submitButton = form.querySelector('button[type="submit"]');
 
-    // Simulate a 10-second delay
-    setTimeout(function() {
-      document.getElementById("loadingMessage").style.display = "none";
-      document.getElementById("successMessage").style.display = "block";
-    }, 10000); // 10 seconds
+    // Show loading state
+    loadingMessage.style.display = "block";
+    loadingMessage.style.color = "blue";
+    loadingMessage.textContent = "Sending your message...";
+    successMessage.style.display = "none";
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    // Check if we're in a local environment (file:// protocol)
+    const isLocalFile = window.location.protocol === 'file:';
+    
+    if (isLocalFile) {
+      // For local development - simulate form submission
+      setTimeout(() => {
+        loadingMessage.style.display = "none";
+        successMessage.style.display = "block";
+        successMessage.style.color = "orange";
+        successMessage.innerHTML = `
+          <strong>Demo Mode:</strong> Form submitted successfully!<br>
+          <small>Note: To enable email functionality, upload to a PHP-enabled web server.</small>
+        `;
+        form.reset();
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+      }, 2000);
+      return;
+    }
+
+    // Send form data using fetch API (for server environment)
+    fetch('forms/contact.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      loadingMessage.style.display = "none";
+      
+      if (data.status === 'success') {
+        successMessage.style.display = "block";
+        successMessage.style.color = "green";
+        successMessage.textContent = data.message;
+        form.reset(); // Clear form on success
+      } else {
+        successMessage.style.display = "block";
+        successMessage.style.color = "red";
+        successMessage.textContent = data.message || "An error occurred. Please try again.";
+      }
+    })
+    .catch(error => {
+      loadingMessage.style.display = "none";
+      successMessage.style.display = "block";
+      successMessage.style.color = "red";
+      
+      // More specific error messages
+      if (error.message.includes('HTTP error')) {
+        successMessage.innerHTML = `
+          Server error occurred. Please try again later.<br>
+          <small>If this persists, contact the site administrator.</small>
+        `;
+      } else if (error.message.includes('Failed to fetch')) {
+        successMessage.innerHTML = `
+          <strong>Connection Issue:</strong><br>
+          • Check if you're running this on a web server (not file://)<br>
+          • Verify PHP is enabled on your server<br>
+          • Check that forms/contact.php exists and is accessible
+        `;
+      } else {
+        successMessage.textContent = "Network error. Please check your connection and try again.";
+      }
+      
+      console.error('Fetch Error:', error);
+      console.log('Current URL:', window.location.href);
+      console.log('Protocol:', window.location.protocol);
+    })
+    .finally(() => {
+      // Reset button state
+      submitButton.disabled = false;
+      submitButton.textContent = "Send Message";
+    });
+  });
+
+  // Add real-time form validation
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const inputs = form.querySelectorAll('input[required], textarea[required]');
+    
+    inputs.forEach(input => {
+      input.addEventListener('blur', function() {
+        validateField(this);
+      });
+      
+      input.addEventListener('input', function() {
+        if (this.classList.contains('is-invalid')) {
+          validateField(this);
+        }
+      });
+    });
+    
+    function validateField(field) {
+      const value = field.value.trim();
+      const isValid = field.checkValidity() && value !== '';
+      
+      if (isValid) {
+        field.classList.remove('is-invalid');
+        field.classList.add('is-valid');
+      } else {
+        field.classList.remove('is-valid');
+        field.classList.add('is-invalid');
+      }
+    }
   });
 </script>
+
+<!-- Add CSS for form validation styling -->
+<style>
+  .form-control.is-valid {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+  }
+  
+  .form-control.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  #loadingMessage, #successMessage {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+</style>
 
 
   </main>
