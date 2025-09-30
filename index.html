@@ -3,34 +3,51 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
-  <title>Indana Aditya's portfolio website</title>
-  <meta content="Professional portfolio of Indana Aditya - Cloud Developer, Frontend Developer, and AI/ML Engineer showcasing projects, skills, and experience." name="description">
-  <meta content="Indana Aditya, portfolio, Cloud Developer, Frontend Developer, AI/ML Engineer, AWS, JavaScript, Python, React, Web Development" name="keywords">
-  
-  <!-- Mobile-specific meta tags -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Indana Aditya">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="theme-color" content="#007bff">
   <meta name="msapplication-TileColor" content="#007bff">
   
-  <!-- Preconnect to external domains for better performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- SEO Meta Tags -->
+  <title>Indana Aditya - Cloud Developer & AI/ML Engineer | AWS Expert</title>
+  <meta name="description" content="Indana Aditya is a passionate Cloud Developer and AI/ML Engineer specializing in AWS cloud services, front-end development, and machine learning solutions. Currently pursuing B.Tech with hands-on experience in cloud technologies.">
+  <meta name="keywords" content="Indana Aditya, Cloud Developer, AWS, AI/ML Engineer, Front-end Developer, Python, JavaScript, Machine Learning, Cloud Computing, Web Development">
+  <meta name="author" content="Indana Aditya">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Indana Aditya - Cloud Developer & AI/ML Engineer">
+  <meta property="og:description" content="Passionate Cloud Developer specializing in AWS, AI/ML, and modern web development. Explore my projects and expertise.">
+  <meta property="og:image" content="assets/img/profile-img.jpg">
+  <meta property="og:url" content="https://indana-aditya.github.io">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Indana Aditya Portfolio">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Indana Aditya - Cloud Developer & AI/ML Engineer">
+  <meta name="twitter:description" content="Passionate Cloud Developer specializing in AWS, AI/ML, and modern web development.">
+  <meta name="twitter:image" content="assets/img/profile-img.jpg">
+  <meta name="twitter:creator" content="@aditya_indana">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon" type="image/png">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="assets/img/favicon.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="assets/img/favicon.png" rel="icon" sizes="16x16" type="image/png">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Fonts with Display Swap for Performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Critical CSS - Vendor Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -39,328 +56,1234 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Person",
+    "name": "Indana Aditya",
+    "jobTitle": "Cloud Developer & AI/ML Engineer",
+    "description": "Passionate Cloud Developer specializing in AWS cloud services, AI/ML, and modern web development",
+    "url": "https://indana-aditya.github.io",
+    "sameAs": [
+      "https://www.linkedin.com/in/aditya-indana-899734216/",
+      "https://github.com/22MH1A42G1/",
+      "https://twitter.com/aditya_indana",
+      "https://www.instagram.com/ad_itya626/"
+    ],
+    "knowsAbout": [
+      "Cloud Computing",
+      "AWS",
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Front-end Development",
+      "Python",
+      "JavaScript"
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Aditya College of Engineering and Technology"
+    }
+  }
+  </script>
 
-  <!-- =======================================================
-  * Template Name: Indana Aditya's portfolio website
-
-  ======================================================== -->
+  <!-- Performance Monitoring -->
+  <script>
+    // Preload critical resources
+    const criticalResources = [
+      'assets/img/profile-img.jpg',
+      'assets/img/hero-bg.jpg'
+    ];
+    
+    criticalResources.forEach(resource => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = resource.includes('.jpg') ? 'image' : 'fetch';
+      link.href = resource;
+      document.head.appendChild(link);
+    });
+  </script>
 </head>
 
-<body class="index-page">
+<body class="index-page" itemscope itemtype="https://schema.org/WebPage">
+  
+  <!-- Skip to content for accessibility -->
+  <a class="skip-link sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
+  
+  <!-- Loading Screen -->
+  <div id="preloader" class="loading-overlay" aria-hidden="true">
+    <div class="loading-spinner-large"></div>
+    <p>Loading Portfolio...</p>
+  </div>
+  
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+    <div class="reading-progress-bar"></div>
+  </div>
 
-  <header id="header" class="header d-flex flex-column justify-content-center">
+  <!-- Enhanced Header with Profile -->
+  <header id="header" class="header d-flex flex-column justify-content-center" role="banner">
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="header-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false">
+      <i class="bi bi-list"></i>
+    </button>
 
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <!-- Sidebar Profile Section -->
+    <div class="sidebar-profile">
+      <img src="assets/img/profile-img.jpg" alt="Indana Aditya Profile Picture" loading="lazy">
+      <h4>Indana Aditya</h4>
+      <p>Cloud Developer & AI/ML Engineer</p>
+    </div>
 
-    <nav id="navmenu" class="navmenu">
+    <!-- Enhanced Navigation -->
+    <nav id="navmenu" class="navmenu" role="navigation" aria-label="Main navigation">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="#skills"><i class="bi bi-tools navicon"></i><span>Skills</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="#projects"><i class="bi bi-briefcase navicon"></i><span>Projects</span></a></li>
-        <li><a href="#certifications"><i class="bi bi-award navicon"></i><span>Certifications</span></a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+        <li><a href="#hero" class="active" aria-current="page"><i class="bi bi-house navicon" aria-hidden="true"></i><span>Home</span></a></li>
+        <li><a href="#about"><i class="bi bi-person navicon" aria-hidden="true"></i><span>About</span></a></li>
+        <li><a href="#skills"><i class="bi bi-tools navicon" aria-hidden="true"></i><span>Skills</span></a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon" aria-hidden="true"></i><span>Resume</span></a></li>
+        <li><a href="#projects"><i class="bi bi-briefcase navicon" aria-hidden="true"></i><span>Projects</span></a></li>
+        <li><a href="#certifications"><i class="bi bi-award navicon" aria-hidden="true"></i><span>Certifications</span></a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon" aria-hidden="true"></i><span>Contact</span></a></li>
       </ul>
     </nav>
 
+    <!-- Sidebar Footer with Social Links -->
+    <div class="sidebar-footer">
+      <div class="sidebar-social">
+        <a href="https://www.linkedin.com/in/aditya-indana-899734216/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://github.com/22MH1A42G1/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://x.com/aditya_indana" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+        <a href="mailto:adityaindana@gmail.com" aria-label="Send Email">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+    </div>
+
   </header>
 
-  <!-- Dark Mode Toggle - Bottom Right Corner -->
+  <!-- Enhanced Dark Mode Toggle -->
   <div class="theme-toggle">
-    <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Dark/Light Mode">
-      <i class="bi bi-sun-fill theme-icon"></i>
+    <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle between dark and light mode">
+      <i class="bi bi-sun-fill theme-icon" aria-hidden="true"></i>
     </button>
   </div>
 
-  <!-- Reading Progress Bar (Mobile-friendly) -->
-  <div class="reading-progress">
-    <div class="reading-progress-bar"></div>
+  <!-- Section Navigation Indicators -->
+  <div class="section-indicator" aria-hidden="true">
+    <div class="section-dot active" data-section="hero" title="Hero Section"></div>
+    <div class="section-dot" data-section="about" title="About Section"></div>
+    <div class="section-dot" data-section="skills" title="Skills Section"></div>
+    <div class="section-dot" data-section="resume" title="Resume Section"></div>
+    <div class="section-dot" data-section="projects" title="Projects Section"></div>
+    <div class="section-dot" data-section="certifications" title="Certifications Section"></div>
+    <div class="section-dot" data-section="contact" title="Contact Section"></div>
   </div>
+
+  <!-- Main Content Area -->
+  <main id="main-content" class="main" role="main">
+
+<!-- Clean Hero Section -->
+<section id="hero" class="hero section position-relative overflow-hidden" 
+         style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center;"
+         aria-label="Hero section introducing Indana Aditya">
   
-  <!-- Section Navigation Indicators (Desktop only) -->
-  <div class="section-indicator">
-    <div class="section-dot active" data-section="hero" title="Home (1)"></div>
-    <div class="section-dot" data-section="about" title="About (2)"></div>
-    <div class="section-dot" data-section="skills" title="Skills (3)"></div>
-    <div class="section-dot" data-section="resume" title="Resume (4)"></div>
-    <div class="section-dot" data-section="projects" title="Projects (5)"></div>
-    <div class="section-dot" data-section="certifications" title="Certifications (6)"></div>
-    <div class="section-dot" data-section="contact" title="Contact (7)"></div>
-  </div>
+  <!-- Background Overlay for Better Text Contrast -->
+  <div class="hero-overlay position-absolute w-100 h-100" 
+       style="background: rgba(0, 0, 0, 0.3); z-index: 1;"></div>
 
-  <main class="main">
-
-<!-- Hero Section -->
-
-<section id="hero" class="hero section light-background position-relative" style="background: url('assets/img/hero-bg.jpg') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center;">
-
-  <div class="container" data-aos="zoom-out">
-    <div class="row align-items-center">
+  <div class="container position-relative" style="z-index: 2;" data-aos="zoom-out">
+    <div class="row align-items-center min-vh-100 py-5">
       
+      <!-- Left Column: Text Content -->
+      <div class="col-lg-7 order-2 order-lg-1">
+        <div class="text-center text-lg-start text-white">
+          <h1 class="display-4 fw-bold mb-4 animate-fade-in-up">
+            Hi, I'm <span style="color: #ffd700;">Indana Aditya</span>
+          </h1>
+          
+          <div class="hero-subtitle mb-4">
+            <p class="fs-5 mb-2 opacity-75">I'm a passionate</p>
+            <div class="fs-3 fw-semibold">
+              <span class="typed" style="color: #ffd700;" 
+                    data-typed-items="Cloud Developer,AI/ML Engineer,Front-end Developer,AWS Expert,Python Developer,Machine Learning Engineer">Cloud Developer</span>
+            </div>
+          </div>
+          
+          <p class="lead mb-5 animate-fade-in-up stagger-2 opacity-90">
+            Specializing in AWS cloud services, artificial intelligence, and modern web development. 
+            Passionate about building innovative and scalable solutions that make a difference.
+          </p>
 
-      <!-- Text Content (will be reordered on larger screens) -->
-      <div class="col-lg-7 order-lg-1 animate-fade-in-left text-center text-lg-start">
-        <h1 class="animate-fade-in-up stagger-1 mb-3">Indana Aditya</h1>
-        <p class="animate-fade-in-up stagger-2 mb-4 fs-5">
-          <span class="text-primary fw-bold">I'm a</span> 
-          <span class="typed" data-typed-items="Cloud Developer,Frontend Developer,AI/ML Engineer,Full Stack Developer" role="img" aria-label="Animated job titles">Cloud Developer</span>
-          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-        </p>
+          <!-- Call to Action Buttons -->
+          <div class="hero-cta mb-4 animate-fade-in-up stagger-3">
+            <a href="#contact" class="btn btn-warning btn-lg me-3 mb-3 px-4 py-3 fw-semibold">
+              <i class="bi bi-envelope-fill me-2"></i>Get In Touch
+            </a>
+            <a href="https://drive.google.com/file/d/1O19dRy56tUnjJ-Y1vV2Kfe8A9obXty-9/view?usp=drive_link" 
+               target="_blank" rel="noopener noreferrer" 
+               class="btn btn-outline-light btn-lg mb-3 px-4 py-3 fw-semibold">
+              <i class="bi bi-download me-2"></i>Download Resume
+            </a>
+          </div>
 
-        <div class="social-links animate-fade-in-up stagger-3 mb-4 justify-content-center justify-content-lg-start">
-          <a href="https://x.com/aditya_indana" class="stagger-1" aria-label="Follow on Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=100025828133340" class="stagger-2" aria-label="Connect on Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/ad_itya626/" class="stagger-3" aria-label="Follow on Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/aditya-indana-899734216/" class="stagger-4" aria-label="Connect on LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/22MH1A42G1/" class="stagger-5" aria-label="View GitHub profile" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+          <!-- Social Links -->
+          <div class="social-links animate-fade-in-up stagger-4">
+            <a href="https://www.linkedin.com/in/aditya-indana-899734216/" target="_blank" rel="noopener noreferrer" 
+               class="social-link me-3" aria-label="LinkedIn Profile">
+              <i class="bi bi-linkedin fs-4"></i>
+            </a>
+            <a href="https://github.com/22MH1A42G1/" target="_blank" rel="noopener noreferrer" 
+               class="social-link me-3" aria-label="GitHub Profile">
+              <i class="bi bi-github fs-4"></i>
+            </a>
+            <a href="https://x.com/aditya_indana" target="_blank" rel="noopener noreferrer" 
+               class="social-link me-3" aria-label="Twitter Profile">
+              <i class="bi bi-twitter-x fs-4"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100025828133340" target="_blank" rel="noopener noreferrer" 
+               class="social-link me-3" aria-label="Facebook Profile">
+              <i class="bi bi-facebook fs-4"></i>
+            </a>
+            <a href="https://www.instagram.com/ad_itya626/" target="_blank" rel="noopener noreferrer" 
+               class="social-link" aria-label="Instagram Profile">
+              <i class="bi bi-instagram fs-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Profile Image & Stats -->
+      <div class="col-lg-5 order-1 order-lg-2 text-center mb-4 mb-lg-0">
+        <!-- Profile Image -->
+        <div class="hero-image mb-4 animate-fade-in-up stagger-1">
+          <div class="position-relative d-inline-block">
+            <img src="assets/img/profile-img.jpg" 
+                 alt="Indana Aditya - Cloud Developer & AI/ML Engineer" 
+                 class="img-fluid rounded-circle shadow-lg border border-4 border-warning"
+                 style="width: 280px; height: 280px; object-fit: cover;"
+                 loading="eager">
+            <div class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-3 border-white"
+                 style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-check-lg text-white fs-5"></i>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-cta animate-bounce-in stagger-4 d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-          <a href="#contact" class="btn btn-primary btn-lg stagger-1" role="button">
-            <i class="bi bi-envelope-fill me-2"></i>Get In Touch
-          </a>
-          <a href="https://drive.google.com/file/d/1O19dRy56tUnjJ-Y1vV2Kfe8A9obXty-9/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg stagger-2" role="button">
-            <i class="bi bi-download"></i> Download CV
-          </a>
+        <!-- Achievement Stats -->
+        <div class="hero-stats animate-fade-in-up stagger-5">
+          <div class="row text-center text-white">
+            <div class="col-4">
+              <div class="stat-item p-3 rounded mb-2" style="background: rgba(255, 255, 255, 0.1);">
+                <h4 class="mb-1" style="color: #ffd700;">25+</h4>
+                <small class="opacity-75">Projects</small>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-item p-3 rounded mb-2" style="background: rgba(255, 255, 255, 0.1);">
+                <h4 class="mb-1" style="color: #ffd700;">5+</h4>
+                <small class="opacity-75">Certifications</small>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-item p-3 rounded mb-2" style="background: rgba(255, 255, 255, 0.1);">
+                <h4 class="mb-1" style="color: #ffd700;">3+</h4>
+                <small class="opacity-75">Years Learning</small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 animate-bounce">
+      <a href="#about" class="text-white text-decoration-none" aria-label="Scroll down to about section">
+        <div class="scroll-indicator d-flex flex-column align-items-center">
+          <span class="small mb-2 opacity-75">Scroll Down</span>
+          <i class="bi bi-chevron-down fs-4 animate-bounce-slow"></i>
+        </div>
+      </a>
+    </div>
   </div>
 
-</section><!-- /Hero Section -->
+  <!-- Animated Background Elements -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" style="z-index: 1;">
+    <!-- Floating Shapes -->
+    <div class="position-absolute animate-float" 
+         style="top: 10%; left: 5%; width: 60px; height: 60px; background: rgba(255, 215, 0, 0.1); border-radius: 50%; animation-delay: 0s;"></div>
+    <div class="position-absolute animate-float" 
+         style="top: 60%; right: 10%; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.05); border-radius: 30%; animation-delay: 2s;"></div>
+    <div class="position-absolute animate-float" 
+         style="bottom: 20%; left: 15%; width: 40px; height: 40px; background: rgba(255, 215, 0, 0.15); border-radius: 20%; animation-delay: 4s;"></div>
+    <div class="position-absolute animate-float" 
+         style="top: 30%; right: 30%; width: 30px; height: 30px; background: rgba(255, 255, 255, 0.08); border-radius: 50%; animation-delay: 1s;"></div>
+  </div>
+
+</section><!-- /Clean Hero Section -->
 
 
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-
+    <!-- Enhanced About Section -->
+    <section id="about" class="about section" aria-labelledby="about-title">
+      
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Hello! I'm Indana Aditya, a passionate cloud developer and AI/ML enthusiast with experience in AWS cloud services. I love building innovative and efficient solutions that solve real-world problems.</p>
+        <h2 id="about-title">About Me</h2>
+        <p class="lead">
+          Passionate cloud developer and AI/ML enthusiast dedicated to building innovative solutions 
+          that bridge the gap between cutting-edge technology and real-world applications.
+        </p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>Cloud Developer &amp; Front-end Developer.</h2>
-            <p class="fst-italic py-3">
-              I am a Cloud Developer and Front-end Developer with a strong passion for AWS, Front-end Development, and AI/ML. I specialize in building efficient, scalable, and innovative solutions that integrate cloud technologies and modern web development.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>17 October 2004</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><p><a href="tel:+919989329510">+91 xxxxxxx510</a></p></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Andhra Pradesh, India</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>20</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B-Tech</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><p><a href="mailto:adityaindana@gmail.com">adityaindana@gmail.com</a></p></span></li>
-                </ul>
+        <div class="row gy-4 align-items-center">
+          
+          <!-- Profile Image Column -->
+          <div class="col-lg-4 text-center" data-aos="zoom-in" data-aos-delay="200">
+            <div class="about-img-wrapper">
+              <img src="assets/img/profile-img.jpg" 
+                   class="img-fluid rounded-3 shadow-lg" 
+                   alt="Indana Aditya - Professional Profile"
+                   loading="lazy"
+                   width="300" height="400">
+              <div class="about-badge">
+                <i class="bi bi-award-fill text-primary"></i>
+                <span>Certified Cloud Developer</span>
               </div>
             </div>
           </div>
-        </div>
 
+          <!-- Content Column -->
+          <div class="col-lg-8 content" data-aos="fade-left" data-aos-delay="300">
+            <h3 class="mb-3">Cloud Developer & AI/ML Engineer</h3>
+            
+            <blockquote class="blockquote fst-italic text-muted mb-4">
+              "Transforming complex problems into elegant cloud-based solutions through the power of AI and modern web technologies."
+            </blockquote>
+
+            <p class="mb-4">
+              I am a dedicated Cloud Developer and AI/ML Engineer with expertise in AWS cloud services, 
+              machine learning, and modern web development. My passion lies in creating scalable, 
+              efficient solutions that leverage cloud computing power to solve real-world challenges.
+            </p>
+
+            <!-- Enhanced Personal Info Grid -->
+            <div class="row info-grid">
+              <div class="col-md-6 mb-3">
+                <div class="info-item">
+                  <i class="bi bi-calendar-event text-primary me-3"></i>
+                  <div>
+                    <strong>Birthday:</strong>
+                    <span>October 17, 2004</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-6 mb-3">
+                <div class="info-item">
+                  <i class="bi bi-person-badge text-primary me-3"></i>
+                  <div>
+                    <strong>Age:</strong>
+                    <span>20 years</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <div class="info-item">
+                  <i class="bi bi-telephone text-primary me-3"></i>
+                  <div>
+                    <strong>Phone:</strong>
+                    <a href="tel:+919989329510" class="text-decoration-none">+91 9989329510</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <div class="info-item">
+                  <i class="bi bi-envelope text-primary me-3"></i>
+                  <div>
+                    <strong>Email:</strong>
+                    <a href="mailto:adityaindana@gmail.com" class="text-decoration-none">adityaindana@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <div class="info-item">
+                  <i class="bi bi-geo-alt text-primary me-3"></i>
+                  <div>
+                    <strong>Location:</strong>
+                    <span>Andhra Pradesh, India</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <div class="info-item">
+                  <i class="bi bi-mortarboard text-primary me-3"></i>
+                  <div>
+                    <strong>Degree:</strong>
+                    <span>B.Tech (Pursuing)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Highlights -->
+            <div class="highlights mt-4">
+              <h4 class="mb-3">Key Highlights</h4>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  <span>AWS Cloud Certified</span>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  <span>Python & Java Expertise</span>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  <span>Machine Learning Projects</span>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  <span>Full-Stack Development</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-4">
+              <a href="#contact" class="btn btn-primary btn-lg">
+                <i class="bi bi-chat-dots me-2"></i>Let's Connect
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
-    </section><!-- /About Section -->
+    </section><!-- /Enhanced About Section -->
 
     
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-      <div class="container section-title animate-on-scroll" data-aos="fade-up">
-        <h2 class="animate-slide-in-bottom">Skills</h2>
-        <p class="animate-fade-in-up stagger-1">Explore my technical skills categorized for clarity. Each skill features a modern, animated progress bar and icon.</p>
-      </div>
+    <!-- Enhanced Technical Skills Section -->
+    <section id="skills" class="skills section" aria-labelledby="skills-title">
+      
+      <div class="container section-title" data-aos="fade-up">
+        <h2 id="skills-title">
+          <i class="bi bi-code-slash text-primary me-2"></i>
+          Technical Expertise
+        </h2>
+        <p class="lead">
+          Comprehensive technical skills spanning cloud computing, artificial intelligence, 
+          and modern software development with hands-on project experience.
+        </p>
+      </div><!-- End Section Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-4">
-          <!-- Frontend Card -->
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-1" role="article" tabindex="0">
-              <div class="card-body text-center">
-                <div class="skill-icon mb-3 animate-pulse" aria-hidden="true"><i class="bi bi-code-slash"></i></div>
-                <h5 class="card-title mb-2">Frontend Development</h5>
-                <p class="card-text small text-muted mb-3">HTML5, CSS3, JavaScript ES6+, Bootstrap 5, Responsive Design</p>
-                <div class="progress-bar-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-label="Frontend Development skill level: 80%">
-                  <div class="progress-bar skill-bar bg-primary" data-skill="80"><span>80%</span></div>
+        
+        <div class="row g-4 skills-grid">
+          
+          <!-- AWS Cloud Services -->
+          <div class="col-lg-4 col-md-6 skill-item" data-category="cloud" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card skill-card h-100 shadow-sm border-0 position-relative">
+              <div class="skill-level-badge position-absolute top-0 end-0 m-2">
+                <span class="badge bg-success">Expert</span>
+              </div>
+              <div class="card-body text-center p-4">
+                <div class="skill-icon mb-3 animate-float">
+                  <i class="bi bi-cloud-fill text-primary" style="font-size: 2.5rem;"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">AWS Cloud Services</h5>
+                <p class="text-muted small mb-3">Cloud infrastructure & serverless computing</p>
+                
+                <div class="skill-tags mb-3">
+                  <span class="badge bg-primary text-white me-1 mb-1">EC2</span>
+                  <span class="badge bg-primary text-white me-1 mb-1">S3</span>
+                  <span class="badge bg-primary text-white me-1 mb-1">Lambda</span>
+                  <span class="badge bg-primary text-white me-1 mb-1">VPC</span>
+                  <span class="badge bg-primary text-white me-1 mb-1">Route53</span>
+                  <span class="badge bg-primary text-white me-1 mb-1">CloudWatch</span>
+                  <span class="badge bg-primary text-white me-1 mb-1">SNS</span>
+                  <span class="badge bg-primary text-white me-1 mb-1">EBS</span>
+                </div>
+                
+                <div class="skill-experience mb-3">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar-event me-1"></i>2+ years experience
+                  </small>
+                </div>
+                
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar skill-bar" data-skill="88" 
+                       style="background: linear-gradient(135deg, #007bff, #0056b3);">
+                    <span>88%</span>
+                  </div>
+                </div>
+                
+                <div class="skill-projects mt-2">
+                  <small class="text-success">
+                    <i class="bi bi-check-circle-fill me-1"></i>15+ Projects Completed
+                  </small>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Cloud Card -->
-          <div class="col-lg-4 col-md-6">
-            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-2">
-              <div class="card-body text-center">
-                <div class="skill-icon mb-2 animate-pulse"><i class="bi bi-cloud"></i></div>
-                <h5 class="card-title">Cloud</h5>
-                <p class="card-text">AWS (EC2, S3, VPC, Lambda, etc.)</p>
+
+          <!-- AI/ML & Data Science -->
+          <div class="col-lg-4 col-md-6 skill-item" data-category="ai" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card skill-card h-100 shadow-sm border-0 position-relative">
+              <div class="skill-level-badge position-absolute top-0 end-0 m-2">
+                <span class="badge bg-warning text-dark">Advanced</span>
+              </div>
+              <div class="card-body text-center p-4">
+                <div class="skill-icon mb-3 animate-float">
+                  <i class="bi bi-robot text-success" style="font-size: 2.5rem;"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">AI/ML & Data Science</h5>
+                <p class="text-muted small mb-3">Machine learning models & data analysis</p>
+                
+                <div class="skill-tags mb-3">
+                  <span class="badge bg-success text-white me-1 mb-1">Python</span>
+                  <span class="badge bg-success text-white me-1 mb-1">TensorFlow</span>
+                  <span class="badge bg-success text-white me-1 mb-1">PyTorch</span>
+                  <span class="badge bg-success text-white me-1 mb-1">Scikit-learn</span>
+                  <span class="badge bg-success text-white me-1 mb-1">Pandas</span>
+                  <span class="badge bg-success text-white me-1 mb-1">NumPy</span>
+                  <span class="badge bg-success text-white me-1 mb-1">OpenCV</span>
+                  <span class="badge bg-success text-white me-1 mb-1">R</span>
+                </div>
+                
+                <div class="skill-experience mb-3">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar-event me-1"></i>1.5+ years experience
+                  </small>
+                </div>
+                
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar skill-bar bg-info" data-skill="80"><span>80%</span></div>
+                  <div class="progress-bar skill-bar" data-skill="82" 
+                       style="background: linear-gradient(135deg, #28a745, #20c997);">
+                    <span>82%</span>
+                  </div>
+                </div>
+                
+                <div class="skill-projects mt-2">
+                  <small class="text-success">
+                    <i class="bi bi-check-circle-fill me-1"></i>12+ ML Models Built
+                  </small>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Backend & DevOps Card -->
-          <div class="col-lg-4 col-md-6">
-            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-3">
-              <div class="card-body text-center">
-                <div class="skill-icon mb-2 animate-pulse"><i class="bi bi-hdd-network"></i></div>
-                <h5 class="card-title">Backend & DevOps</h5>
-                <p class="card-text">Python, Java, Docker, Kubernetes, Terraform</p>
+
+          <!-- Programming Languages -->
+          <div class="col-lg-4 col-md-6 skill-item" data-category="programming" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card skill-card h-100 shadow-sm border-0 position-relative">
+              <div class="skill-level-badge position-absolute top-0 end-0 m-2">
+                <span class="badge bg-info text-white">Expert</span>
+              </div>
+              <div class="card-body text-center p-4">
+                <div class="skill-icon mb-3 animate-float">
+                  <i class="bi bi-braces text-warning" style="font-size: 2.5rem;"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">Programming Languages</h5>
+                <p class="text-muted small mb-3">Core programming & scripting languages</p>
+                
+                <div class="skill-tags mb-3">
+                  <span class="badge bg-warning text-dark me-1 mb-1">Python</span>
+                  <span class="badge bg-warning text-dark me-1 mb-1">Java</span>
+                  <span class="badge bg-warning text-dark me-1 mb-1">JavaScript</span>
+                  <span class="badge bg-warning text-dark me-1 mb-1">C</span>
+                  <span class="badge bg-warning text-dark me-1 mb-1">R</span>
+                  <span class="badge bg-warning text-dark me-1 mb-1">SQL</span>
+                </div>
+                
+                <div class="skill-experience mb-3">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar-event me-1"></i>3+ years experience
+                  </small>
+                </div>
+                
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar skill-bar bg-success" data-skill="75"><span>75%</span></div>
+                  <div class="progress-bar skill-bar" data-skill="85" 
+                       style="background: linear-gradient(135deg, #ffc107, #fd7e14);">
+                    <span>85%</span>
+                  </div>
+                </div>
+                
+                <div class="skill-projects mt-2">
+                  <small class="text-success">
+                    <i class="bi bi-check-circle-fill me-1"></i>20+ Programming Projects
+                  </small>
                 </div>
               </div>
             </div>
           </div>
-          <!-- AI/ML & Data Card -->
-          <div class="col-lg-6 col-md-6">
-            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-4">
-              <div class="card-body text-center">
-                <div class="skill-icon mb-2 animate-pulse"><i class="bi bi-robot"></i></div>
-                <h5 class="card-title">AI/ML & Data</h5>
-                <p class="card-text">AI, ML, Deep Learning, Data Visualization (R, Python)</p>
+
+          <!-- Web Development -->
+          <div class="col-lg-4 col-md-6 skill-item" data-category="web" data-aos="zoom-in" data-aos-delay="400">
+            <div class="card skill-card h-100 shadow-sm border-0 position-relative">
+              <div class="skill-level-badge position-absolute top-0 end-0 m-2">
+                <span class="badge bg-warning text-dark">Advanced</span>
+              </div>
+              <div class="card-body text-center p-4">
+                <div class="skill-icon mb-3 animate-float">
+                  <i class="bi bi-code-slash text-info" style="font-size: 2.5rem;"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">Web Development</h5>
+                <p class="text-muted small mb-3">Frontend & responsive web design</p>
+                
+                <div class="skill-tags mb-3">
+                  <span class="badge bg-info text-white me-1 mb-1">HTML5</span>
+                  <span class="badge bg-info text-white me-1 mb-1">CSS3</span>
+                  <span class="badge bg-info text-white me-1 mb-1">JavaScript</span>
+                  <span class="badge bg-info text-white me-1 mb-1">Bootstrap</span>
+                  <span class="badge bg-info text-white me-1 mb-1">React</span>
+                  <span class="badge bg-info text-white me-1 mb-1">Responsive Design</span>
+                </div>
+                
+                <div class="skill-experience mb-3">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar-event me-1"></i>2+ years experience
+                  </small>
+                </div>
+                
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar skill-bar bg-warning" data-skill="75"><span>75%</span></div>
+                  <div class="progress-bar skill-bar" data-skill="80" 
+                       style="background: linear-gradient(135deg, #17a2b8, #007bff);">
+                    <span>80%</span>
+                  </div>
+                </div>
+                
+                <div class="skill-projects mt-2">
+                  <small class="text-success">
+                    <i class="bi bi-check-circle-fill me-1"></i>10+ Web Applications
+                  </small>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Database & Networking Card -->
-          <div class="col-lg-6 col-md-6">
-            <div class="card skill-card h-100 shadow-sm animate-on-scroll stagger-5">
-              <div class="card-body text-center">
-                <div class="skill-icon mb-2 animate-pulse"><i class="bi bi-diagram-3"></i></div>
-                <h5 class="card-title">Database & Networking</h5>
-                <p class="card-text">MySQL, MongoDB, CCNA (Routing, Switching, Wireless)</p>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar skill-bar bg-danger" data-skill="70"><span>70%</span></div>
+
+          <!-- DevOps & Infrastructure -->
+          <div class="col-lg-4 col-md-6 skill-item" data-category="cloud" data-aos="zoom-in" data-aos-delay="500">
+            <div class="card skill-card h-100 shadow-sm border-0 position-relative">
+              <div class="skill-level-badge position-absolute top-0 end-0 m-2">
+                <span class="badge bg-secondary text-white">Intermediate</span>
+              </div>
+              <div class="card-body text-center p-4">
+                <div class="skill-icon mb-3 animate-float">
+                  <i class="bi bi-server text-secondary" style="font-size: 2.5rem;"></i>
                 </div>
+                <h5 class="card-title fw-bold mb-2">DevOps & Infrastructure</h5>
+                <p class="text-muted small mb-3">Automation & deployment pipelines</p>
+                
+                <div class="skill-tags mb-3">
+                  <span class="badge bg-secondary text-white me-1 mb-1">Docker</span>
+                  <span class="badge bg-secondary text-white me-1 mb-1">Kubernetes</span>
+                  <span class="badge bg-secondary text-white me-1 mb-1">Git</span>
+                  <span class="badge bg-secondary text-white me-1 mb-1">Jenkins</span>
+                  <span class="badge bg-secondary text-white me-1 mb-1">Terraform</span>
+                  <span class="badge bg-secondary text-white me-1 mb-1">Linux</span>
+                </div>
+                
+                <div class="skill-experience mb-3">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar-event me-1"></i>1+ years experience
+                  </small>
+                </div>
+                
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar skill-bar" data-skill="75" 
+                       style="background: linear-gradient(135deg, #6c757d, #495057);">
+                    <span>75%</span>
+                  </div>
+                </div>
+                
+                <div class="skill-projects mt-2">
+                  <small class="text-success">
+                    <i class="bi bi-check-circle-fill me-1"></i>8+ Infrastructure Projects
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database & Networking -->
+          <div class="col-lg-4 col-md-6 skill-item" data-category="cloud" data-aos="zoom-in" data-aos-delay="600">
+            <div class="card skill-card h-100 shadow-sm border-0 position-relative">
+              <div class="skill-level-badge position-absolute top-0 end-0 m-2">
+                <span class="badge bg-warning text-dark">Advanced</span>
+              </div>
+              <div class="card-body text-center p-4">
+                <div class="skill-icon mb-3 animate-float">
+                  <i class="bi bi-diagram-3 text-danger" style="font-size: 2.5rem;"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">Database & Networking</h5>
+                <p class="text-muted small mb-3">Data management & network protocols</p>
+                
+                <div class="skill-tags mb-3">
+                  <span class="badge bg-danger text-white me-1 mb-1">MySQL</span>
+                  <span class="badge bg-danger text-white me-1 mb-1">MongoDB</span>
+                  <span class="badge bg-danger text-white me-1 mb-1">CCNA</span>
+                  <span class="badge bg-danger text-white me-1 mb-1">TCP/IP</span>
+                  <span class="badge bg-danger text-white me-1 mb-1">REST API</span>
+                  <span class="badge bg-danger text-white me-1 mb-1">GraphQL</span>
+                </div>
+                
+                <div class="skill-experience mb-3">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar-event me-1"></i>2+ years experience
+                  </small>
+                </div>
+                
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar skill-bar" data-skill="78" 
+                       style="background: linear-gradient(135deg, #dc3545, #e83e8c);">
+                    <span>78%</span>
+                  </div>
+                </div>
+                
+                <div class="skill-projects mt-2">
+                  <small class="text-success">
+                    <i class="bi bi-check-circle-fill me-1"></i>Database Design Expert
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Visualization & Analysis -->
+          <div class="col-lg-4 col-md-6 skill-item" data-category="ai" data-aos="zoom-in" data-aos-delay="700">
+            <div class="card skill-card h-100 shadow-sm border-0 position-relative">
+              <div class="skill-level-badge position-absolute top-0 end-0 m-2">
+                <span class="badge bg-warning text-dark">Advanced</span>
+              </div>
+              <div class="card-body text-center p-4">
+                <div class="skill-icon mb-3 animate-float">
+                  <i class="bi bi-bar-chart text-success" style="font-size: 2.5rem;"></i>
+                </div>
+                <h5 class="card-title fw-bold mb-2">Data Visualization</h5>
+                <p class="text-muted small mb-3">Statistical analysis & visual insights</p>
+                
+                <div class="skill-tags mb-3">
+                  <span class="badge bg-success text-white me-1 mb-1">Matplotlib</span>
+                  <span class="badge bg-success text-white me-1 mb-1">Seaborn</span>
+                  <span class="badge bg-success text-white me-1 mb-1">Plotly</span>
+                  <span class="badge bg-success text-white me-1 mb-1">R Studio</span>
+                  <span class="badge bg-success text-white me-1 mb-1">Tableau</span>
+                  <span class="badge bg-success text-white me-1 mb-1">Power BI</span>
+                </div>
+                
+                <div class="skill-experience mb-3">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar-event me-1"></i>2+ years experience
+                  </small>
+                </div>
+                
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar skill-bar" data-skill="83" 
+                       style="background: linear-gradient(135deg, #28a745, #20c997);">
+                    <span>83%</span>
+                  </div>
+                </div>
+                
+                <div class="skill-projects mt-2">
+                  <small class="text-success">
+                    <i class="bi bi-check-circle-fill me-1"></i>Data Storytelling Expert
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Skills Summary -->
+        <div class="skills-summary mt-5 text-center" data-aos="fade-up" data-aos-delay="700">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-3">
+              <div class="summary-item">
+                <h3 class="text-primary mb-1">5+</h3>
+                <p class="mb-0 text-muted">Programming Languages</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+              <div class="summary-item">
+                <h3 class="text-primary mb-1">15+</h3>
+                <p class="mb-0 text-muted">Technologies</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+              <div class="summary-item">
+                <h3 class="text-primary mb-1">10+</h3>
+                <p class="mb-0 text-muted">Tools & Frameworks</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+              <div class="summary-item">
+                <h3 class="text-primary mb-1">3+</h3>
+                <p class="mb-0 text-muted">AWS Certifications</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section><!-- /Skills Section -->
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
+      </div>
+    </section><!-- /Enhanced Skills Section -->
+
+    <!-- Enhanced Resume Section -->
+    <section id="resume" class="resume section" aria-labelledby="resume-title">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>I am a Cloud Developer & Front-end Developer with expertise in AWS, Front-end development, and AI/ML. Currently pursuing my B.Tech, I have worked on various projects involving AWS cloud services, JavaScript, and machine learning.</p>
-      </div><!-- End Section Title -->
-       <!-- Right Column: Resume Button -->
-      <div class="col-lg-5 text-lg-end text-center mt-4 mt-lg-0">
-        click here 👉 <a href="https://drive.google.com/file/d/1O19dRy56tUnjJ-Y1vV2Kfe8A9obXty-9/view?usp=drive_link" target="_blank" class="btn btn-primary btn-lg">
-          View My Resume
-        </a>
-      </div>
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
-
-            <div class="resume-item pb-0">
-              <h4>Indana Aditya</h4>
-              <p><em>AWS Cloud developer who worked on many projects with 1+ years experience.</em></p>
-              <ul>
-                <li>Bendapudi, Andhra Pradesh, India</li>
-                <li>+91 9989329510</li>
-                <li>adityaindana@gmail.com</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Technology</h4>
-              <h5>2022 - 2026</h5>
-              <p><em>Aditya College of Engineering and Technology, Surampalem, Andhra Pradesh, India.</em></p>
-              <p>Pursuing a B.Tech in Computer Science Engineering(Artificial Intelligence and Machine Learning) and haing strong foundations in Programming and AWS Cloud.</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Intermediate</h4>
-              <h5>2020 - 2022</h5>
-              <p><em>P.R Junior College, Kakinada, Andhra Pradesh, India.</em></p>
-              <p>Completed Intermediate with a focus on Mathematics, Physics and Chemistry.</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Secondary School</h4>
-              <h5>2015 - 2020</h5>
-              <p><em>Z.P. High School, Bendapudi, Andhra Pradesh, India.</em></p>
-            </div><!-- Edn Resume Item -->
-
-
+        <h2 id="resume-title">
+          <i class="bi bi-file-earmark-text text-primary me-2"></i>
+          Professional Journey
+        </h2>
+        <p class="lead">
+          A comprehensive overview of my educational background, professional training, 
+          and technical expertise in cloud computing, AI/ML, and software development.
+        </p>
+        
+        <!-- Resume Stats -->
+        <div class="resume-stats mt-4">
+          <div class="row text-center">
+            <div class="col-6 col-md-3 mb-3">
+              <div class="stat-card">
+                <h4 class="text-primary mb-1 counter" data-target="3">0</h4>
+                <p class="mb-0 text-muted">Years of Learning</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+              <div class="stat-card">
+                <h4 class="text-primary mb-1 counter" data-target="25">0</h4>
+                <p class="mb-0 text-muted">Projects Completed</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+              <div class="stat-card">
+                <h4 class="text-primary mb-1 counter" data-target="5">0</h4>
+                <p class="mb-0 text-muted">Certifications</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+              <div class="stat-card">
+                <h4 class="text-primary mb-1 counter" data-target="15">0</h4>
+                <p class="mb-0 text-muted">Technologies Mastered</p>
+              </div>
+            </div>
           </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Training Experience</h3>
-            <div class="resume-item">
-              <h4>AWS Cloud Developer</h4>
-              <h5>2024 - Present</h5>
-              <p><em>Technical Hub, Surampalem, Andhra Pradesh, India</em></p>
-              <ul>
-                <li>Gained proficiency in AWS services like EC2, S3, VPC, Lambda, Route53, EBS, SNS, Cloudwatch, Rekognition etc..</li>
-                <li>Built and deployed cloud-based applications using AWS.</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Artificial Intelligence and Machine Learning</h4>
-              <h5>2023</h5>
-              <p><em>Technical Hub, Surampalem, Andhra Pradesh, India</em></p>
-              <ul>
-                <li>Implemented multiple projects using Python, leveraging libraries like NumPy, Pandas, and OpenCV for data processing and AI applications.</li>
-                <li>Developed AI models using supervised and unsupervised learning techniques, including regression, decision trees, and neural networks.</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Programming Languagues</h4>
-              <h5>2023</h5>
-              <p><em>Technical Hub, Surampalem, Andhra Pradesh, India</em></p>
-              <ul>
-                <li>Developed strong programming skills in C and Python focusing on problem-solving, data structures, and algorithm optimization.</li>
-                <li>Developed strong Java programming skills with a focus on object-oriented design, JDBC integration, and Java GUI (AWT, SWING).</li>
-                <li>Gained proficiency in R programming for data analysis and visualization.</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-          </div>
-
         </div>
 
-      </div>
+        <!-- Resume Download CTA -->
+        <div class="resume-cta mt-4 text-center" data-aos="fade-up" data-aos-delay="200">
+          <a href="https://drive.google.com/file/d/1O19dRy56tUnjJ-Y1vV2Kfe8A9obXty-9/view?usp=drive_link" 
+             target="_blank" rel="noopener noreferrer" 
+             class="btn btn-primary btn-lg me-3 mb-2">
+            <i class="bi bi-download me-2"></i>Download Resume
+          </a>
+          <a href="#contact" class="btn btn-outline-primary btn-lg mb-2">
+            <i class="bi bi-envelope-fill me-2"></i>Contact Me
+          </a>
+        </div>
+      </div><!-- End Section Title -->
+      <div class="container">
 
-    </section><!-- /Resume Section -->
+        <!-- Resume Navigation Tabs -->
+        <div class="resume-tabs-wrapper mb-5" data-aos="fade-up" data-aos-delay="300">
+          <ul class="nav nav-pills justify-content-center resume-tabs" id="resumeTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="summary-tab" data-bs-toggle="pill" 
+                      data-bs-target="#summary" type="button" role="tab" 
+                      aria-controls="summary" aria-selected="true">
+                <i class="bi bi-person-circle me-2"></i>Summary
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="education-tab" data-bs-toggle="pill" 
+                      data-bs-target="#education" type="button" role="tab" 
+                      aria-controls="education" aria-selected="false">
+                <i class="bi bi-mortarboard me-2"></i>Education
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="training-tab" data-bs-toggle="pill" 
+                      data-bs-target="#training" type="button" role="tab" 
+                      aria-controls="training" aria-selected="false">
+                <i class="bi bi-award me-2"></i>Training
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="certifications-tab" data-bs-toggle="pill" 
+                      data-bs-target="#certifications" type="button" role="tab" 
+                      aria-controls="certifications" aria-selected="false">
+                <i class="bi bi-patch-check me-2"></i>Certifications
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Resume Tab Content -->
+        <div class="tab-content resume-content" id="resumeTabContent">
+          
+          <!-- Summary Tab -->
+          <div class="tab-pane fade show active" id="summary" role="tabpanel" 
+               aria-labelledby="summary-tab" tabindex="0">
+            <div class="row align-items-center">
+              <div class="col-lg-4 text-center mb-4 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
+                <img src="assets/img/profile-img.jpg" alt="Indana Aditya" 
+                     class="img-fluid rounded-circle shadow-lg resume-photo"
+                     width="200" height="200" loading="lazy">
+              </div>
+              <div class="col-lg-8" data-aos="fade-left" data-aos-delay="500">
+                <div class="resume-summary">
+                  <h3 class="mb-3">
+                    <span class="text-primary">Indana Aditya</span>
+                    <small class="text-muted d-block fs-6">Cloud Developer & AI/ML Engineer</small>
+                  </h3>
+                  
+                  <p class="lead mb-4">
+                    Passionate Cloud Developer specializing in AWS cloud services, artificial intelligence, 
+                    and modern web development. Currently pursuing B.Tech in CSE (AI/ML) with hands-on 
+                    experience in building scalable cloud solutions and machine learning applications.
+                  </p>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <div class="contact-info d-flex align-items-center">
+                        <i class="bi bi-geo-alt text-primary me-3 fs-5"></i>
+                        <div>
+                          <strong>Location:</strong><br>
+                          <span class="text-muted">Andhra Pradesh, India</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="contact-info d-flex align-items-center">
+                        <i class="bi bi-telephone text-primary me-3 fs-5"></i>
+                        <div>
+                          <strong>Phone:</strong><br>
+                          <a href="tel:+919989329510" class="text-muted text-decoration-none">+91 9989329510</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="contact-info d-flex align-items-center">
+                        <i class="bi bi-envelope text-primary me-3 fs-5"></i>
+                        <div>
+                          <strong>Email:</strong><br>
+                          <a href="mailto:adityaindana@gmail.com" class="text-muted text-decoration-none">adityaindana@gmail.com</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="contact-info d-flex align-items-center">
+                        <i class="bi bi-calendar-event text-primary me-3 fs-5"></i>
+                        <div>
+                          <strong>Age:</strong><br>
+                          <span class="text-muted">20 years</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Key Strengths -->
+                  <div class="strengths mt-4">
+                    <h5 class="mb-3">Key Strengths:</h5>
+                    <div class="row">
+                      <div class="col-md-6 mb-2">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <span>AWS Cloud Architecture</span>
+                      </div>
+                      <div class="col-md-6 mb-2">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <span>Machine Learning Development</span>
+                      </div>
+                      <div class="col-md-6 mb-2">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <span>Full-Stack Web Development</span>
+                      </div>
+                      <div class="col-md-6 mb-2">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <span>Data Analysis & Visualization</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Tab -->
+          <div class="tab-pane fade" id="education" role="tabpanel" 
+               aria-labelledby="education-tab" tabindex="0">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="timeline-wrapper" data-aos="fade-up" data-aos-delay="400">
+                  
+                  <!-- Bachelor's Degree -->
+                  <div class="timeline-item">
+                    <div class="timeline-marker bg-primary">
+                      <i class="bi bi-mortarboard text-white"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="timeline-header">
+                        <h4 class="mb-1">Bachelor of Technology</h4>
+                        <h5 class="text-primary mb-2">2022 - 2026 (Pursuing)</h5>
+                        <p class="text-muted mb-3">
+                          <i class="bi bi-geo-alt me-1"></i>
+                          Aditya College of Engineering and Technology, Surampalem, Andhra Pradesh
+                        </p>
+                      </div>
+                      <div class="timeline-body">
+                        <p class="mb-3">
+                          <strong>Specialization:</strong> Computer Science Engineering 
+                          (Artificial Intelligence and Machine Learning)
+                        </p>
+                        <div class="highlights">
+                          <h6>Key Highlights:</h6>
+                          <ul class="list-unstyled">
+                            <li><i class="bi bi-arrow-right text-primary me-2"></i>Strong foundation in Programming and Data Structures</li>
+                            <li><i class="bi bi-arrow-right text-primary me-2"></i>Advanced coursework in AI/ML algorithms and techniques</li>
+                            <li><i class="bi bi-arrow-right text-primary me-2"></i>Hands-on experience with AWS cloud technologies</li>
+                            <li><i class="bi bi-arrow-right text-primary me-2"></i>Multiple project-based learning experiences</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Intermediate -->
+                  <div class="timeline-item">
+                    <div class="timeline-marker bg-info">
+                      <i class="bi bi-book text-white"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="timeline-header">
+                        <h4 class="mb-1">Intermediate (12th Grade)</h4>
+                        <h5 class="text-info mb-2">2020 - 2022</h5>
+                        <p class="text-muted mb-3">
+                          <i class="bi bi-geo-alt me-1"></i>
+                          P.R Junior College, Kakinada, Andhra Pradesh
+                        </p>
+                      </div>
+                      <div class="timeline-body">
+                        <p class="mb-3">
+                          <strong>Stream:</strong> Mathematics, Physics, Chemistry (MPC)
+                        </p>
+                        <p>
+                          Completed Intermediate education with a strong focus on analytical thinking 
+                          and problem-solving through mathematics and science subjects, laying the 
+                          foundation for engineering studies.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Secondary School -->
+                  <div class="timeline-item">
+                    <div class="timeline-marker bg-success">
+                      <i class="bi bi-award text-white"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="timeline-header">
+                        <h4 class="mb-1">Secondary School (10th Grade)</h4>
+                        <h5 class="text-success mb-2">2015 - 2020</h5>
+                        <p class="text-muted mb-3">
+                          <i class="bi bi-geo-alt me-1"></i>
+                          Z.P. High School, Bendapudi, Andhra Pradesh
+                        </p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>
+                          Completed secondary education with excellent academic performance, 
+                          developing strong fundamentals in core subjects and establishing 
+                          a passion for technology and problem-solving.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training Tab -->
+          <div class="tab-pane fade" id="training" role="tabpanel" 
+               aria-labelledby="training-tab" tabindex="0">
+            <div class="row">
+              <div class="col-lg-10 mx-auto">
+                <div class="training-grid" data-aos="fade-up" data-aos-delay="400">
+                  
+                  <!-- AWS Cloud Training -->
+                  <div class="training-card mb-4">
+                    <div class="card border-0 shadow-sm">
+                      <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                          <div class="training-icon me-4">
+                            <i class="bi bi-cloud-fill text-primary" style="font-size: 2.5rem;"></i>
+                          </div>
+                          <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                              <h4 class="mb-1">AWS Cloud Developer Training</h4>
+                              <span class="badge bg-primary px-3 py-2">2024 - Present</span>
+                            </div>
+                            <p class="text-muted mb-3">
+                              <i class="bi bi-building me-1"></i>
+                              Technical Hub, Surampalem, Andhra Pradesh, India
+                            </p>
+                            
+                            <div class="training-details">
+                              <h6>Key Learning Areas:</h6>
+                              <div class="row mb-3">
+                                <div class="col-md-6">
+                                  <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>AWS EC2 & VPC Architecture</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>S3 Storage Solutions</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Lambda Serverless Computing</li>
+                                  </ul>
+                                </div>
+                                <div class="col-md-6">
+                                  <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Route53 DNS Management</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>CloudWatch Monitoring</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>SNS & EBS Services</li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="achievements">
+                                <strong>Achievements:</strong>
+                                <p class="mb-0">Successfully built and deployed multiple cloud-based applications using AWS infrastructure, demonstrating proficiency in cloud architecture design and implementation.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- AI/ML Training -->
+                  <div class="training-card mb-4">
+                    <div class="card border-0 shadow-sm">
+                      <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                          <div class="training-icon me-4">
+                            <i class="bi bi-robot text-success" style="font-size: 2.5rem;"></i>
+                          </div>
+                          <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                              <h4 class="mb-1">Artificial Intelligence & Machine Learning</h4>
+                              <span class="badge bg-success px-3 py-2">2023</span>
+                            </div>
+                            <p class="text-muted mb-3">
+                              <i class="bi bi-building me-1"></i>
+                              Technical Hub, Surampalem, Andhra Pradesh, India
+                            </p>
+                            
+                            <div class="training-details">
+                              <h6>Technologies & Libraries:</h6>
+                              <div class="mb-3">
+                                <span class="badge bg-light text-dark me-2 mb-2">Python</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">NumPy</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Pandas</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">OpenCV</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">TensorFlow</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Scikit-learn</span>
+                              </div>
+                              <div class="achievements">
+                                <strong>Project Highlights:</strong>
+                                <ul class="mb-0">
+                                  <li>Developed multiple AI models using supervised and unsupervised learning techniques</li>
+                                  <li>Implemented regression, decision trees, and neural network algorithms</li>
+                                  <li>Built computer vision applications using OpenCV for image processing</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Programming Training -->
+                  <div class="training-card mb-4">
+                    <div class="card border-0 shadow-sm">
+                      <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                          <div class="training-icon me-4">
+                            <i class="bi bi-code-slash text-warning" style="font-size: 2.5rem;"></i>
+                          </div>
+                          <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                              <h4 class="mb-1">Programming Languages Mastery</h4>
+                              <span class="badge bg-warning text-dark px-3 py-2">2023</span>
+                            </div>
+                            <p class="text-muted mb-3">
+                              <i class="bi bi-building me-1"></i>
+                              Technical Hub, Surampalem, Andhra Pradesh, India
+                            </p>
+                            
+                            <div class="training-details">
+                              <div class="row">
+                                <div class="col-md-6 mb-3">
+                                  <h6>Core Programming:</h6>
+                                  <ul class="list-unstyled">
+                                    <li><i class="bi bi-arrow-right text-primary me-2"></i>C Programming fundamentals</li>
+                                    <li><i class="bi bi-arrow-right text-primary me-2"></i>Python development</li>
+                                    <li><i class="bi bi-arrow-right text-primary me-2"></i>Data structures & algorithms</li>
+                                  </ul>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                  <h6>Advanced Topics:</h6>
+                                  <ul class="list-unstyled">
+                                    <li><i class="bi bi-arrow-right text-primary me-2"></i>Java OOP concepts</li>
+                                    <li><i class="bi bi-arrow-right text-primary me-2"></i>JDBC database integration</li>
+                                    <li><i class="bi bi-arrow-right text-primary me-2"></i>R for data analysis</li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="achievements">
+                                <strong>Practical Applications:</strong>
+                                <p class="mb-0">Built numerous projects focusing on problem-solving, algorithm optimization, and GUI development using AWT and Swing frameworks.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </section> <!-- End Resume Tab Content -->
+
 <!-- Projects Section -->
      <!-- Portfolio/Projects Section -->
     <section id="projects" class="projects section">
-      <div class="container section-title animate-on-scroll" data-aos="fade-up">
-        <h2 class="animate-slide-in-bottom">Projects</h2>
-        <p class="animate-fade-in-up stagger-1">Here are some of my featured projects. Explore the cards below for details, tech stacks, GitHub links, and live demos.</p>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>Here are some of my featured projects. Explore the cards below for details, tech stacks, GitHub links, and live demos.</p>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
           <!-- Project Card 1 -->
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="card h-100 shadow-sm animate-on-scroll stagger-1">
+            <div class="card h-100 shadow-sm">
               <img src="assets/img/project1.jpg" class="card-img-top" alt="Project 1">
               <div class="card-body">
                 <h5 class="card-title">AWS Automation With Boto3</h5>
@@ -373,7 +1296,7 @@
           </div>
           <!-- Project Card 2 -->
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="card h-100 shadow-sm animate-on-scroll stagger-2">
+            <div class="card h-100 shadow-sm">
               <img src="assets/img/Project2.jpg" class="card-img-top" alt="Project 2">
               <div class="card-body">
                 <h5 class="card-title">AI Nutritionist App</h5>
@@ -386,7 +1309,7 @@
           </div>
           <!-- Project Card 3 -->
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <div class="card h-100 shadow-sm animate-on-scroll stagger-3">
+            <div class="card h-100 shadow-sm">
               <img src="assets/img/project3.jpg" class="card-img-top" alt="Project 3">
               <div class="card-body">
                 <h5 class="card-title">AWS-Serverless-Sentiment-Analysis</h5>
@@ -503,33 +1426,33 @@
 <!-- Contact Section -->
 <section id="contact" class="contact section">
   <!-- Section Title -->
-  <div class="container section-title animate-on-scroll" data-aos="fade-up">
-    <h2 class="animate-slide-in-bottom">Contact</h2>
-    <p class="animate-fade-in-up stagger-1">I am here to assist you with any inquiries. Feel free to reach out to me!</p>
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>I am here to assist you with any inquiries. Feel free to reach out to me!</p>
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade" data-aos-delay="100">
     <div class="row gy-4">
       <!-- Contact Info -->
       <div class="col-lg-4">
-        <div class="info-item d-flex animate-on-scroll stagger-1" data-aos="fade-up" data-aos-delay="200">
-          <i class="bi bi-geo-alt flex-shrink-0 animate-pulse"></i>
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
           <div>
             <h3>Address</h3>
             <p>Andhra Pradesh, India</p>
           </div>
         </div><!-- End Info Item -->
 
-        <div class="info-item d-flex animate-on-scroll stagger-2" data-aos="fade-up" data-aos-delay="300">
-          <i class="bi bi-telephone flex-shrink-0 animate-pulse"></i>
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-telephone flex-shrink-0"></i>
           <div>
             <h3>Phone</h3>
             <p><a href="tel:+919989329510">+91 xxxxxxx510</a></p>
           </div>
         </div><!-- End Info Item -->
 
-        <div class="info-item d-flex animate-on-scroll stagger-3" data-aos="fade-up" data-aos-delay="400">
-          <i class="bi bi-envelope flex-shrink-0 animate-pulse"></i>
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-envelope flex-shrink-0"></i>
           <div>
             <h3>Email</h3>
             <p><a href="mailto:adityaindana@gmail.com">adityaindana@gmail.com</a></p>
@@ -539,27 +1462,19 @@
 
       <!-- Contact Form -->
       <div class="col-lg-8">
-        <form id="contactForm" action="forms/contact.php" method="post" class="php-email-form animate-on-scroll" data-aos="fade-up" data-aos-delay="200" novalidate>
+        <form id="contactForm" action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
             <div class="col-md-6">
-              <label for="contact-name" class="visually-hidden">Your Name</label>
-              <input type="text" id="contact-name" name="name" class="form-control animate-on-scroll stagger-1" placeholder="Your Name" required autocomplete="name" inputmode="text" aria-describedby="name-error">
-              <div id="name-error" class="invalid-feedback"></div>
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
             </div>
             <div class="col-md-6">
-              <label for="contact-email" class="visually-hidden">Your Email</label>
-              <input type="email" id="contact-email" class="form-control animate-on-scroll stagger-2" name="email" placeholder="Your Email" required autocomplete="email" inputmode="email" aria-describedby="email-error">
-              <div id="email-error" class="invalid-feedback"></div>
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
             </div>
             <div class="col-md-12">
-              <label for="contact-subject" class="visually-hidden">Subject</label>
-              <input type="text" id="contact-subject" class="form-control animate-on-scroll stagger-3" name="subject" placeholder="Subject" required autocomplete="off" inputmode="text" aria-describedby="subject-error">
-              <div id="subject-error" class="invalid-feedback"></div>
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
             </div>
             <div class="col-md-12">
-              <label for="contact-message" class="visually-hidden">Message</label>
-              <textarea id="contact-message" class="form-control animate-on-scroll stagger-4" name="message" rows="6" placeholder="Message (minimum 10 characters)" required aria-describedby="message-error" minlength="10"></textarea>
-              <div id="message-error" class="invalid-feedback"></div>
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
             </div>
 
             <!-- Honeypot Field (Hidden) -->
@@ -570,7 +1485,7 @@
             <div class="col-md-12 text-center">
               <div id="loadingMessage" style="display: none; color: blue;">Sending...</div>
               <div id="successMessage" style="display: none; color: green;">Your message has been sent. Thank you!</div>
-              <button type="submit" class="btn btn-primary animate-on-scroll stagger-5">Send Message</button>
+              <button type="submit" class="btn btn-primary">Send Message</button>
             </div>
           </div>
         </form>
@@ -737,35 +1652,225 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Indana Aditya</strong> <span>All Rights Reserved</span>
+  <!-- Enhanced Footer -->
+  <footer id="footer" class="footer position-relative light-background" role="contentinfo">
+    <div class="container">
+      <div class="row gy-4">
+        
+        <!-- About Column -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-about">
+            <h5 class="mb-3">Indana Aditya</h5>
+            <p class="mb-3">
+              Passionate Cloud Developer & AI/ML Engineer creating innovative solutions 
+              with cutting-edge technology.
+            </p>
+            <div class="social-links d-flex">
+              <a href="https://www.linkedin.com/in/aditya-indana-899734216/" target="_blank" rel="noopener noreferrer" 
+                 class="me-3" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="https://github.com/22MH1A42G1/" target="_blank" rel="noopener noreferrer" 
+                 class="me-3" aria-label="GitHub">
+                <i class="bi bi-github"></i>
+              </a>
+              <a href="https://x.com/aditya_indana" target="_blank" rel="noopener noreferrer" 
+                 class="me-3" aria-label="Twitter">
+                <i class="bi bi-twitter-x"></i>
+              </a>
+              <a href="mailto:adityaindana@gmail.com" class="me-3" aria-label="Email">
+                <i class="bi bi-envelope-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-links">
+            <h5 class="mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#hero" class="text-decoration-none">Home</a></li>
+              <li><a href="#about" class="text-decoration-none">About</a></li>
+              <li><a href="#skills" class="text-decoration-none">Skills</a></li>
+              <li><a href="#projects" class="text-decoration-none">Projects</a></li>
+              <li><a href="#contact" class="text-decoration-none">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-services">
+            <h5 class="mb-3">Services</h5>
+            <ul class="list-unstyled">
+              <li>Cloud Architecture</li>
+              <li>AI/ML Solutions</li>
+              <li>Web Development</li>
+              <li>DevOps Consulting</li>
+              <li>Technical Training</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-contact">
+            <h5 class="mb-3">Get In Touch</h5>
+            <div class="contact-item mb-2">
+              <i class="bi bi-geo-alt me-2"></i>
+              <span>Andhra Pradesh, India</span>
+            </div>
+            <div class="contact-item mb-2">
+              <i class="bi bi-telephone me-2"></i>
+              <a href="tel:+919989329510" class="text-decoration-none">+91 9989329510</a>
+            </div>
+            <div class="contact-item mb-2">
+              <i class="bi bi-envelope me-2"></i>
+              <a href="mailto:adityaindana@gmail.com" class="text-decoration-none">adityaindana@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="my-4">
+
+      <!-- Copyright and Additional Info -->
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="copyright">
+            <span>&copy; <span id="current-year"></span></span> 
+            <strong class="px-1 sitename">Indana Aditya</strong> 
+            <span>All Rights Reserved</span>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="footer-meta">
+            <span class="text-muted">Built with ❤️ using modern web technologies</span>
+          </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Enhanced Scroll Top Button -->
+  <a href="#hero" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" 
+     aria-label="Scroll to top" title="Back to top">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  <!-- Custom Cursor (Desktop Only) -->
+  <div class="custom-cursor d-none d-lg-block" aria-hidden="true"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Tooltip Container -->
+  <div id="custom-tooltip" class="custom-tooltip" role="tooltip" aria-hidden="true"></div>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- Performance and Analytics -->
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Intersection Observer for performance
+    if ('IntersectionObserver' in window) {
+      // Lazy load images
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            img.classList.remove('lazy');
+            observer.unobserve(img);
+          }
+        });
+      });
+      
+      // Observe all images with loading="lazy"
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+    
+    // Service Worker for PWA (if manifest exists)
+    if ('serviceWorker' in navigator && document.querySelector('link[rel="manifest"]')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => console.log('SW registered'))
+          .catch(error => console.log('SW registration failed'));
+      });
+    }
+    
+    // Web Vitals monitoring (optional)
+    function measureWebVitals() {
+      if ('PerformanceObserver' in window) {
+        // Measure loading performance
+        const perfObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          entries.forEach(entry => {
+            if (entry.entryType === 'navigation') {
+              console.log(`Page load time: ${entry.loadEventEnd - entry.loadEventStart}ms`);
+            }
+          });
+        });
+        perfObserver.observe({ entryTypes: ['navigation'] });
+      }
+    }
+    
+    // Call performance measurement
+    measureWebVitals();
+  </script>
+
+  <!-- Vendor JS Files - Loaded with defer for better performance -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+
+  <!-- Main JS File - Enhanced -->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- Google Analytics (Optional - Replace with your tracking ID) -->
+  <!-- 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_TRACKING_ID');
+  </script>
+  -->
+
+  <!-- Schema.org Structured Data for Better SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Indana Aditya Portfolio",
+    "url": "https://indana-aditya.github.io",
+    "author": {
+      "@type": "Person",
+      "name": "Indana Aditya",
+      "jobTitle": "Cloud Developer & AI/ML Engineer",
+      "description": "Passionate Cloud Developer specializing in AWS, AI/ML, and modern web development",
+      "image": "assets/img/profile-img.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/aditya-indana-899734216/",
+        "https://github.com/22MH1A42G1/",
+        "https://twitter.com/aditya_indana"
+      ]
+    },
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://indana-aditya.github.io#person"
+    }
+  }
+  </script>
 
 </body>
 
