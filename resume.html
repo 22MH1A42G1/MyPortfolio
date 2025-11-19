@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aditya Indana — Software Engineer • Portfolio & Resume</title>
+<meta name="description" content="Aditya Indana - Software Engineer | AWS, Python, DevOps, Cloud, AI/ML. Portfolio, Projects and Resume."/>
+<style>
+/* ============================================
+   ADITYA INDIANA — FULL PORTFOLIO + RESUME
+   Single-file, feature-rich, responsive
+   ============================================ */
+
+/* ---------- ROOT & THEME ---------- */
+:root{
+  --bg:#f3f7ff;
+  --card:#ffffff;
+  --text:#0b1220;
+  --muted:#556078;
+  --accent:#0b63ce;
+  --accent-2:#7c3aed;
+  --glass: rgba(255,255,255,0.6);
+  --success:#128f4f;
+  --danger:#dc3545;
+  --maxwidth:1200px;
+  --radius:12px;
+  --shadow: 0 12px 40px rgba(11,63,138,0.08);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  --ui-font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --print-accent: #000;
+}
+
+:root.dark {
+  --bg:#071028;
+  --card: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  --text:#e6eefc;
+  --muted:#aab6d1;
+  --accent:#4aa3ff;
+  --accent-2:#b89aff;
+  --glass: rgba(255,255,255,0.03);
+  --shadow: none;
+}
+
+/* ---------- BASE ---------- */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);font-family:var(--ui-font);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--accent)}
+.container{max-width:var(--maxwidth);margin:28px auto;padding:18px}
+.header{display:flex;gap:18px;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:64px;height:64px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:white;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 8px 30px rgba(11,63,138,0.12)}
+.title{font-size:20px;font-weight:800}
+.subtitle{color:var(--muted);font-size:13px;margin-top:4px}
+
+/* ---------- NAV ---------- */
+.floating-nav{position:fixed;right:18px;top:18px;background:var(--card);border-radius:12px;padding:8px;box-shadow:var(--shadow);z-index:1200;display:flex;flex-direction:column;gap:8px}
+.nav-btn{background:transparent;border:0;padding:10px;border-radius:8px;cursor:pointer;color:var(--text);font-weight:700}
+.nav-btn:hover{background:var(--glass);transform:translateY(-2px)}
+.small{font-size:13px;color:var(--muted)}
+
+/* ---------- HERO ---------- */
+.hero{display:grid;grid-template-columns:1fr 360px;gap:26px;align-items:start;margin-top:20px}
+@media (max-width:980px){.hero{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow);overflow:hidden}
+.hero-left h1{margin:0;font-size:32px;color:var(--accent)}
+.hero-left p{margin:8px 0;color:var(--muted);line-height:1.5}
+.contact-list{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.contact-pill{background:var(--glass);padding:8px 10px;border-radius:8px;font-weight:600;color:var(--text);font-size:13px}
+
+/* ---------- ACTIONS & QUICK LINKS ---------- */
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(11,99,214,0.1)}
+.btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(11,99,214,0.06)}
+
+/* ---------- SECTIONS ---------- */
+.section{margin-top:20px}
+.section h2{font-size:18px;margin:0 0 10px 0;padding-left:12px;border-left:4px solid var(--accent);color:var(--accent);font-weight:800}
+
+/* ---------- SKILLS ---------- */
+.skills-grid{display:flex;gap:12px;flex-wrap:wrap}
+.skill-pill{background:var(--pill, var(--glass));padding:8px 12px;border-radius:999px;font-weight:700;color:var(--text);font-size:13px;border:1px solid rgba(11,99,214,0.05)}
+
+/* ---------- SKILL BARS ---------- */
+.skill-bar{background:linear-gradient(90deg, rgba(11,99,214,0.06), rgba(124,58,237,0.02));padding:10px;border-radius:10px}
+.skill-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.skill-label{font-weight:700;font-size:14px}
+.progress{height:10px;background:rgba(0,0,0,0.06);border-radius:10px;overflow:hidden;flex:1;margin-left:12px}
+.progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0%;transition:width 1s ease}
+
+/* ---------- TIMELINE ---------- */
+.timeline{display:flex;flex-direction:column;gap:16px}
+.timeline-item{display:flex;gap:12px;align-items:flex-start}
+.timeline-icon{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+.timeline-content{background:var(--card);padding:12px;border-radius:10px;box-shadow:var(--shadow);flex:1}
+.timeline-meta{font-size:13px;color:var(--muted)}
+
+/* ---------- PROJECTS ---------- */
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:1000px){.project-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:680px){.project-grid{grid-template-columns:1fr}}
+.project-card{background:var(--card);padding:12px;border-radius:10px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.project-title{font-weight:800;color:#09244f}
+.project-desc{color:var(--muted);font-size:13px}
+.project-tags{display:flex;gap:8px;flex-wrap:wrap}
+
+/* ---------- FOOTER ---------- */
+.footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px;padding:14px}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:880px){
+  .container{padding:12px}
+  .header{flex-direction:column;align-items:flex-start;gap:10px}
+}
+
+/* ---------- PRINT OPTIMIZED ---------- */
+@media print{
+  :root{--accent:var(--print-accent)}
+  body{background:white}
+  .floating-nav,.actions,.contact-list,.logo{display:none}
+  .container{max-width:720px;padding:0}
+  .card,.project-card{box-shadow:none;border:0}
+  .project-grid{grid-template-columns:1fr}
+  .page-break{page-break-before:always}
+}
+
+/* ---------- ACCESSIBILITY FOCUS ---------- */
+:focus{outline:3px solid rgba(11,99,214,0.18);outline-offset:2px}
+
+/* ---------- TOOLTIP ---------- */
+.tooltip{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:rgba(11,63,138,0.92);color:white;padding:8px 12px;border-radius:8px;font-weight:700;z-index:2000;opacity:0;transition:opacity .18s ease,transform .18s ease}
+.tooltip.show{opacity:1;transform:translateX(-50%) translateY(-8px)}
+
+/* ---------- COLLAPSIBLE ---------- */
+.collapse-toggle{background:transparent;border:1px dashed rgba(11,99,214,0.06);padding:8px;border-radius:8px;cursor:pointer}
+
+/* ---------- SEARCH ---------- */
+.search-box{display:flex;gap:8px}
+.search-input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(11,99,214,0.06)}
+
+/* ---------- KEYBOARD HINTS ---------- */
+.kbd{background:rgba(0,0,0,0.05);padding:3px 8px;border-radius:6px;font-family:var(--mono);font-size:12px}
+
+/* ---------- SMALL HELP TEXT ---------- */
+.helper{font-size:13px;color:var(--muted)}
+
+/* ---------- A LOT MORE LINES: Extra UI pieces for 2k+ content ---------- */
+/* Styling sections for educational timeline, certifications, awards, test results, contact form */
+.educ-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(max-width:780px){.educ-grid{grid-template-columns:1fr}}
+.cert-list{display:flex;flex-direction:column;gap:8px}
+.badge{display:inline-block;padding:6px 8px;border-radius:8px;background:linear-gradient(90deg,#f8fafc,#eef6ff);font-weight:700;color:#0b3e7d;border:1px solid rgba(11,99,214,0.06)}
+
+/* End CSS */
+</style>
+</head>
+<body>
+<!-- =========================
+     Constants: edit here
+     ========================= -->
+<script>
+/* User-config area */
+const PROFILE = {
+  name: "Aditya Indana",
+  title: "Software Engineer",
+  subtitle: "CSE (AI & ML) • Passing 2026",
+  phone: "9989329510",
+  email: "adityaindana@gmail.com",
+  location: "Kakinada, Andhra Pradesh, India",
+  linkedin: "https://www.linkedin.com/in/aditya-indana-899734216/",
+  github: "https://github.com/22MH1A42G1",
+  resumePdfName: "Aditya_Indana_Resume.pdf"
+}
+
+/* Project data (kept here for easy edits) */
+const PROJECTS = [
+  {
+    title: "Traffic Violation Reporter with Vehicle Number Detection",
+    date: "Jun 2025",
+    repo: "https://github.com/22MH1A42G1/traffic-violation-reporter-with-vehicle-number-detection",
+    tech: ["Python","AWS Rekognition","S3","Lambda","DynamoDB"],
+    desc: "AI-powered system to detect traffic violations and extract number plates. Achieved 95%+ accuracy on 500+ images; serverless processing and email alerts."
+  },
+  {
+    title: "Face Recognition Attendance System",
+    date: "Oct 2024",
+    repo: "https://github.com/22MH1A42G1/Face-Recognition-Attendance-System-repository-iship",
+    tech: ["Python","AWS Rekognition","Streamlit","DynamoDB"],
+    desc: "Face-based attendance system with Streamlit admin UI; reduced manual attendance time by ~90% for 50+ users."
+  },
+  {
+    title: "AWS Automation with Boto3",
+    date: "2024",
+    repo: "https://github.com/22MH1A42G1/Aws-Automation-With-Boto3",
+    tech: ["Python","Boto3","EC2","S3","RDS"],
+    desc: "Reusable Python automation modules to manage EC2/S3/RDS/IAM; reduced manual cloud tasks by ~50%."
+  },
+  {
+    title: "AWS Serverless Sentiment Analysis API",
+    date: "2024",
+    repo: "https://github.com/22MH1A42G1/AWS-Serverless-Sentiment-Analysis",
+    tech: ["AWS Lambda","API Gateway","Comprehend","HTML/CSS"],
+    desc: "Serverless sentiment classifier API using AWS Comprehend; realtime classification (POS/NEG/NEUTRAL/MIXED)."
+  },
+  {
+    title: "Faculty Feedback System",
+    date: "2023",
+    repo: "https://github.com/22MH1A42G1/FacultyFeedback_SkillUpCoder_Project_team14",
+    tech: ["Java","Swing","MySQL","JDBC"],
+    desc: "Desktop feedback application with role-based login and reporting tools for faculty evaluation."
+  },
+  {
+    title: "Secure File Storage on AWS S3",
+    date: "2024",
+    repo: "https://github.com/22MH1A42G1/AWS-Secure-Files-storage",
+    tech: ["JavaScript","S3","IAM","Pre-signed URLs"],
+    desc: "Secure web portal for direct browser upload to S3 via pre-signed URLs; eliminates need for console/CLI."
+  }
+];
+
+/* Skills list */
+const SKILLS = [
+  {name:"Python", level:92},
+  {name:"AWS (EC2,S3,Lambda,Rekognition)", level:90},
+  {name:"Boto3", level:88},
+  {name:"Docker", level:80},
+  {name:"Kubernetes", level:65},
+  {name:"Terraform", level:72},
+  {name:"Jenkins", level:70},
+  {name:"REST APIs", level:86},
+  {name:"MySQL/Oracle", level:75},
+  {name:"Streamlit", level:78},
+  {name:"Java", level:68},
+  {name:"C", level:60}
+];
+</script>
+
+<!-- =========================
+     UI: Container + Header
+     ========================= -->
+<div class="container" id="app">
+  <div class="header">
+    <div class="brand">
+      <div class="logo" id="logo">AI</div>
+      <div>
+        <div class="title" id="nameTitle">Aditya Indana</div>
+        <div class="subtitle" id="subtitle">Software Engineer • CSE (AI & ML) • 2026</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="helper small">Quick keys: <span class="kbd">H</span> Home • <span class="kbd">P</span> Projects • <span class="kbd">D</span> Download PDF</div>
+      <button class="btn" id="themeToggle" title="Toggle dark / light">Toggle Theme</button>
+    </div>
+  </div>
+
+  <!-- floating nav -->
+  <div class="floating-nav" role="navigation" aria-label="Quick navigation">
+    <button class="nav-btn" data-target="#home">Home</button>
+    <button class="nav-btn" data-target="#about">About</button>
+    <button class="nav-btn" data-target="#skillsSec">Skills</button>
+    <button class="nav-btn" data-target="#experience">Experience</button>
+    <button class="nav-btn" data-target="#projects">Projects</button>
+    <button class="nav-btn" data-target="#contact">Contact</button>
+  </div>
+
+  <!-- HERO -->
+  <div id="home" class="hero">
+    <div class="card hero-left">
+      <h1 id="heroName">Hi, I'm <span style="color:var(--accent)">Aditya</span> 👋</h1>
+      <p>Software Engineer with practical experience building cloud-native solutions on AWS, automating infrastructure using Python & Boto3, developing scalable APIs, and deploying production-ready systems.</p>
+
+      <div class="contact-list" aria-hidden="false">
+        <div class="contact-pill">📍 Kakinada, Andhra Pradesh</div>
+        <div class="contact-pill">📞 <a href="tel:9989329510" id="phoneLink">9989329510</a></div>
+        <div class="contact-pill">✉️ <a href="mailto:adityaindana@gmail.com" id="emailLink">adityaindana@gmail.com</a></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="downloadPdf">Download PDF</button>
+        <a class="btn ghost" href="#" id="printFriendly" onclick="window.print();return false;">Print View</a>
+        <a class="btn secondary" id="viewGithub" target="_blank" href="https://github.com/22MH1A42G1">View GitHub</a>
+      </div>
+
+      <div style="margin-top:12px" class="helper">
+        Available for internships & full-time roles • Open to relocation • Comfortable with shift work
+      </div>
+    </div>
+
+    <div class="card hero-right" style="display:flex;flex-direction:column;gap:12px;align-items:stretch">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-weight:800">Contact</div>
+          <div class="small" style="color:var(--muted)"><a href="#" id="mailtoLink">adityaindana@gmail.com</a></div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-weight:700">Graduation %</div>
+          <div style="font-size:20px">67.7%</div>
+        </div>
+      </div>
+
+      <div style="border-radius:10px;padding:10px;background:linear-gradient(180deg,rgba(11,99,214,0.04),rgba(124,58,237,0.02))">
+        <div style="font-weight:800">Summary</div>
+        <div class="small" style="margin-top:6px">Cloud-first developer comfortable with AWS serverless & DevOps pipelines. Strong DSA foundation & real-world projects.</div>
+      </div>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="link-btn" href="https://www.linkedin.com/in/aditya-indana-899734216/" target="_blank">LinkedIn</a>
+        <a class="link-btn" href="https://github.com/22MH1A42G1" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" class="section card" style="margin-top:18px">
+    <h2>About</h2>
+    <p>I am a final-year B.Tech student specializing in AI & ML, with hands-on experience in AWS cloud, Python automation, and full-stack development. I enjoy solving practical problems, automating repetitive tasks, and creating production-grade solutions. My learning path includes cloud engineering, containerization, DevOps tooling, and algorithmic problem solving.</p>
+
+    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="collapse-toggle" id="expandAll">Expand all</button>
+      <button class="collapse-toggle" id="collapseAll">Collapse all</button>
+      <button class="collapse-toggle" id="copyEmail">Copy Email</button>
+      <div class="helper" style="margin-left:auto">Press <span class="kbd">H</span> to go home</div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="skillsSec" class="section card">
+    <h2>Skills</h2>
+    <p class="small">Click a skill to filter projects using that skill (interactive).</p>
+    <div class="skills-grid" id="skillButtons" style="margin-top:8px"></div>
+
+    <div style="margin-top:14px">
+      <div class="skill-bar" aria-hidden="true">
+        <div class="skill-row"><div class="skill-label">Python</div><div style="width:70px;text-align:right" class="small">92%</div></div>
+        <div class="progress"><i data-width="92%"></i></div>
+      </div>
+
+      <div class="skill-bar" aria-hidden="true" style="margin-top:10px">
+        <div class="skill-row"><div class="skill-label">AWS (EC2, S3, Lambda, Rekognition)</div><div style="width:70px;text-align:right" class="small">90%</div></div>
+        <div class="progress"><i data-width="90%"></i></div>
+      </div>
+
+      <div class="skill-bar" aria-hidden="true" style="margin-top:10px">
+        <div class="skill-row"><div class="skill-label">DevOps / Automation</div><div style="width:70px;text-align:right" class="small">80%</div></div>
+        <div class="progress"><i data-width="80%"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div id="experience" class="section">
+    <h2>Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item card">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="timeline-icon">I</div>
+          <div class="timeline-content">
+            <div class="role">AWS DevOps Intern — Technical Hub</div>
+            <div class="timeline-meta">May 2025 — July 2025 • Surampalem, Andhra Pradesh</div>
+            <div class="small">Key contributions:</div>
+            <ul>
+              <li>Built CI/CD pipelines using Jenkins & Docker, improving deployment speed by 30%.</li>
+              <li>Containerized 5+ services and implemented Terraform provisioning to save 8+ hours/week.</li>
+              <li>Improved cluster reliability and contributed to standard operating runbooks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item card">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="timeline-icon">II</div>
+          <div class="timeline-content">
+            <div class="role">AWS Developer Intern — Technical Hub</div>
+            <div class="timeline-meta">May 2024 — July 2024 • Surampalem, Andhra Pradesh</div>
+            <div class="small">Key contributions:</div>
+            <ul>
+              <li>Automated EC2, S3 and RDS workflows using Python (Boto3), reducing manual ops by 50%.</li>
+              <li>Developed RDS backup validation script and internal RESTful utilities.</li>
+              <li>Improved provisioning speed and cost-efficiency.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div class="search-box" style="width:60%">
+        <input type="text" id="projectSearch" class="search-input" placeholder="Search projects or filter by tech (e.g., Rekognition, Terraform)"/>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <div class="helper small">Sort:</div>
+        <select id="projectSort" style="padding:8px;border-radius:8px">
+          <option value="newest">Newest</option>
+          <option value="alpha">Alphabetical</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div id="projectGrid" class="project-grid"></div>
+
+  </div>
+
+  <!-- EDUCATION & CERTS -->
+  <div class="section card">
+    <h2>Education & Certifications</h2>
+    <div class="educ-grid">
+      <div>
+        <div class="role">B.Tech — Computer Science & Engineering (AI & ML)</div>
+        <div class="meta">Aditya College of Engineering & Technology (JNTUK) • 2022–2026 • CGPA: 7.52 (67.7%)</div>
+
+        <div style="margin-top:10px">
+          <div class="role">Intermediate (MPC)</div>
+          <div class="meta">BIEAP — 67%</div>
+
+          <div style="height:8px"></div>
+
+          <div class="role">Secondary School (SSC)</div>
+          <div class="meta">BSEAP — 75.33%</div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px 0">Certifications</h3>
+        <div class="cert-list">
+          <div class="badge">AWS Developer Associate</div>
+          <div class="badge">IT Specialist — Python</div>
+          <div class="badge">IT Specialist — Java</div>
+          <div class="badge">IT Specialist — HTML & CSS</div>
+          <div class="badge">Infosys — AI Foundations</div>
+          <div class="badge">Docker Essentials — IBM</div>
+          <div class="badge">Postman API Fundamentals Student Expert</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="section card">
+    <h2>Achievements & Coding Profiles</h2>
+    <ul>
+      <li>LeetCode: 700+ problems — <a href="https://leetcode.com/u/Adityaaaaaaaaaaaaa/" target="_blank">Profile</a></li>
+      <li>GeeksforGeeks: 300+ problems — <a href="https://www.geeksforgeeks.org/user/a9127e1at/" target="_blank">Profile</a></li>
+      <li>CodeChef: 1000+ problems — <a href="https://www.codechef.com/users/a9127416" target="_blank">Profile</a></li>
+    </ul>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="section card">
+    <h2>Contact</h2>
+    <p class="small">Feel free to reach out for internships, full-time roles, or collaborative projects.</p>
+
+    <form id="contactForm" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+      <input placeholder="Your name" name="name" required style="padding:10px;border-radius:8px;border:1px solid rgba(11,99,214,0.06)"/>
+      <input placeholder="Your email" name="email" required style="padding:10px;border-radius:8px;border:1px solid rgba(11,99,214,0.06)"/>
+      <input placeholder="Subject" name="subject" style="grid-column:1 / -1;padding:10px;border-radius:8px;border:1px solid rgba(11,99,214,0.06)"/>
+      <textarea placeholder="Message" name="message" rows="4" style="grid-column:1 / -1;padding:10px;border-radius:8px;border:1px solid rgba(11,99,214,0.06)"></textarea>
+      <div style="grid-column:1 / -1;display:flex;gap:8px;align-items:center">
+        <button type="submit" class="btn">Send Message</button>
+        <button type="button" id="clearForm" class="btn ghost">Clear</button>
+        <div class="helper" style="margin-left:auto">Or email directly: <a href="mailto:adityaindana@gmail.com">adityaindana@gmail.com</a></div>
+      </div>
+    </form>
+  </div>
+
+  <div class="footer">
+    © <span id="year"></span> Aditya Indana • Resume and portfolio — Built with ❤️ • <a href="#" id="downloadTxt">Download plain TXT</a>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip">Link opened</div>
+
+<!-- =========================
+     Scripts: dynamic behavior
+     ========================= -->
+<script>
+/* ---------- Utilities ---------- */
+const $ = (s, ctx=document) => ctx.querySelector(s);
+const $$ = (s, ctx=document) => Array.from(ctx.querySelectorAll(s));
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+/* ---------- Initialize DOM content from PROFILE ---------- */
+document.getElementById('nameTitle').textContent = PROFILE.name;
+document.getElementById('subtitle').textContent = PROFILE.title + ' • ' + PROFILE.subtitle;
+document.getElementById('heroName').innerHTML = `Hi, I'm <span style="color:var(--accent)">` + PROFILE.name.split(' ')[0] + `</span> 👋`;
+document.getElementById('phoneLink').href = 'tel:' + PROFILE.phone;
+document.getElementById('phoneLink').textContent = PROFILE.phone;
+document.getElementById('emailLink').href = 'mailto:' + PROFILE.email;
+document.getElementById('emailLink').textContent = PROFILE.email;
+document.getElementById('mailtoLink').href = 'mailto:' + PROFILE.email;
+document.getElementById('viewGithub').href = PROFILE.github;
+document.getElementById('logo').textContent = PROFILE.name.split(' ').map(n=>n[0]||'').slice(0,2).join('').toUpperCase();
+
+/* ---------- Theme handling (dark / light + storage) ---------- */
+const root = document.documentElement;
+const applyTheme = (theme) => {
+  if(theme === 'dark') root.classList.add('dark'); else root.classList.remove('dark');
+  localStorage.setItem('resume_theme', theme);
+};
+const current = localStorage.getItem('resume_theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+applyTheme(current);
+$('#themeToggle').addEventListener('click', ()=> applyTheme(root.classList.contains('dark') ? 'light' : 'dark'));
+
+/* ---------- Floating nav behavior ---------- */
+$$('.floating-nav .nav-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=> {
+    const t = document.querySelector(btn.dataset.target);
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+
+/* ---------- Keyboard shortcuts ---------- */
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'h' || e.key === 'H') { $('#home').scrollIntoView({behavior:'smooth'}); }
+  if(e.key === 'p' || e.key === 'P') { $('#projects').scrollIntoView({behavior:'smooth'}); }
+  if(e.key === 'd' || e.key === 'D') { triggerDownloadPdf(); }
+});
+
+/* ---------- Tooltip small notification ---------- */
+function showTooltip(msg) {
+  const tt = document.getElementById('tooltip');
+  tt.textContent = msg;
+  tt.classList.add('show');
+  setTimeout(()=>tt.classList.remove('show'),1200);
+}
+
+/* ---------- Skill buttons generation and filtering ---------- */
+const skillButtonsEl = $('#skillButtons');
+SKILLS.forEach(s=>{
+  const b = document.createElement('button');
+  b.className = 'skill-pill';
+  b.textContent = s.name;
+  b.dataset.skill = s.name;
+  b.addEventListener('click', ()=> filterProjectsBySkill(s.name));
+  skillButtonsEl.appendChild(b);
+});
+
+/* ---------- Render projects (cards) ---------- */
+const projectGrid = $('#projectGrid');
+function renderProjects(list) {
+  projectGrid.innerHTML = '';
+  list.forEach(p=>{
+    const card = document.createElement('article');
+    card.className = 'project-card';
+    const title = document.createElement('div'); title.className='project-title'; title.textContent = p.title;
+    const meta = document.createElement('div'); meta.className='small'; meta.textContent = p.date;
+    const desc = document.createElement('div'); desc.className='project-desc'; desc.textContent = p.desc;
+    const tags = document.createElement('div'); tags.className='project-tags';
+    p.tech.forEach(t=>{
+      const tspan = document.createElement('span');
+      tspan.className='badge';
+      tspan.textContent = t;
+      tags.appendChild(tspan);
+    });
+    const linkRow = document.createElement('div');
+    linkRow.style.display='flex'; linkRow.style.justifyContent='space-between'; linkRow.style.alignItems='center';
+    const repoLink = document.createElement('a'); repoLink.className='small external-link'; repoLink.href = p.repo; repoLink.target='_blank'; repoLink.textContent='View Repo';
+    repoLink.addEventListener('click', (ev)=> { showTooltip('Opening repo: ' + p.title); });
+    const moreBtn = document.createElement('button'); moreBtn.className='btn ghost'; moreBtn.textContent='Copy Link'; moreBtn.addEventListener('click', ()=> {
+      navigator.clipboard && navigator.clipboard.writeText(p.repo).then(()=> showTooltip('Repo link copied'));
+    });
+    linkRow.appendChild(repoLink); linkRow.appendChild(moreBtn);
+
+    card.appendChild(title); card.appendChild(meta); card.appendChild(desc); card.appendChild(tags); card.appendChild(linkRow);
+    projectGrid.appendChild(card);
+  });
+}
+renderProjects(PROJECTS);
+
+/* ---------- Project search & sort ---------- */
+$('#projectSearch').addEventListener('input', (e)=>{
+  const q = e.target.value.trim().toLowerCase();
+  const filtered = PROJECTS.filter(p=>{
+    return p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.tech.join(' ').toLowerCase().includes(q);
+  });
+  renderProjects(filtered);
+});
+$('#projectSort').addEventListener('change', (e)=>{
+  const v = e.target.value;
+  let sorted = [...PROJECTS];
+  if(v === 'alpha') sorted.sort((a,b)=>a.title.localeCompare(b.title));
+  else sorted.sort((a,b)=> new Date(b.date) - new Date(a.date));
+  renderProjects(sorted);
+});
+
+/* ---------- Progress bars animate on view ---------- */
+function animateSkillBars(){
+  $$('[data-width]').forEach(el=>{
+    const width = el.getAttribute('data-width');
+    el.style.width = width;
+  });
+}
+setTimeout(animateSkillBars, 400); // delay for smoother effect
+
+/* ---------- Fill skill buttons active highlight when used for filter ---------- */
+function filterProjectsBySkill(skill){
+  $('#projectSearch').value = skill;
+  const event = new Event('input'); $('#projectSearch').dispatchEvent(event);
+  showTooltip('Filtering projects by ' + skill);
+}
+
+/* ---------- Copy email button ---------- */
+$('#copyEmail').addEventListener('click', ()=>{
+  navigator.clipboard && navigator.clipboard.writeText(PROFILE.email).then(()=> showTooltip('Email copied to clipboard'));
+});
+
+/* ---------- Expand/collapse sections (demo: toggles .card content) ---------- */
+$('#expandAll').addEventListener('click', ()=>{
+  $$('.card').forEach(c=> c.style.maxHeight = 'none');
+  showTooltip('Expanded all sections');
+});
+$('#collapseAll').addEventListener('click', ()=>{
+  $$('.card').forEach(c=> c.style.maxHeight = '300px');
+  showTooltip('Collapsed all sections');
+});
+
+/* ---------- Contact form (local demo: prevents submit and simulates send) ---------- */
+$('#contactForm').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  showTooltip('Message sent (demo). Contact via email for real messages.');
+  e.target.reset();
+});
+$('#clearForm').addEventListener('click', ()=> { $('#contactForm').reset(); showTooltip('Form cleared'); });
+
+/* ---------- Year auto fill ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- Download as TXT fallback ---------- */
+$('#downloadTxt').addEventListener('click', (e)=>{
+  e.preventDefault();
+  const txt = [
+    PROFILE.name,
+    PROFILE.title + ' • ' + PROFILE.subtitle,
+    'Phone: ' + PROFILE.phone,
+    'Email: ' + PROFILE.email,
+    'GitHub: ' + PROFILE.github,
+    '',
+    'Summary:',
+    'Passionate Software Engineer with hands-on AWS and Python experience.',
+    '',
+    'Projects:',
+    ...PROJECTS.map(p=> `${p.title} — ${p.repo}`)
+  ].join('\\n');
+  const blob = new Blob([txt], {type:'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'Aditya_Indana_Resume.txt'; document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+  showTooltip('TXT downloaded');
+});
+
+/* ---------- Download PDF (uses window.print) ---------- */
+function triggerDownloadPdf(){
+  // For better PDF, user should use "Save as PDF" in print dialog.
+  showTooltip('Opening print dialog — choose Save as PDF');
+  setTimeout(()=> window.print(), 250);
+}
+$('#downloadPdf').addEventListener('click', triggerDownloadPdf);
+
+/* ---------- Small analytics stub (no external calls) ---------- */
+const analytics = {views:0, clicks:0};
+window.addEventListener('load', ()=> analytics.views++);
+document.addEventListener('click', ()=> analytics.clicks++);
+
+/* ---------- Accessibility: make external links open with rel attrs ---------- */
+$$('a[target="_blank"]').forEach(a=>{
+  a.setAttribute('rel','noopener noreferrer');
+});
+
+/* ---------- Persist scroll position (nice to have) ---------- */
+if('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('beforeunload', ()=> localStorage.setItem('scrollY', window.scrollY));
+window.addEventListener('load', ()=> { const y = localStorage.getItem('scrollY'); if(y) window.scrollTo(0, parseInt(y)); });
+
+/* ---------- Ensure keyboard focus visible for tabs ---------- */
+document.addEventListener('keyup', (e)=>{
+  if(e.key === 'Tab') document.body.classList.add('show-focus');
+});
+
+/* ---------- END SCRIPT ---------- */
+</script>
+</body>
+</html>
