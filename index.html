@@ -328,78 +328,112 @@
         }
 
         /* Journey Timeline */
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
+        /* Timeline Modern Look */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, #667eea, #764ba2);
-        }
+.timeline-item {
+    position: relative;
+    margin-bottom: 70px;
+}
 
-        .timeline-item {
-            margin-bottom: 50px;
-            position: relative;
-        }
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, #7e22ce, #1e3c72);
+    border-radius: 50%;
+    border: 4px solid white;
+    z-index: 10;
+}
 
-        .timeline-content {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            width: 45%;
-            position: relative;
-        }
+.timeline-marker.glow {
+    box-shadow: 0 0 12px rgba(126, 34, 206, 0.8);
+}
 
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: 55%;
-        }
+.timeline-content {
+    width: 46%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    position: relative;
+    transition: transform 0.3s ease;
+}
 
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: 55%;
-        }
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 55%;
+}
 
-        .timeline-marker {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: #7e22ce;
-            border: 4px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(126, 34, 206, 0.2);
-        }
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: 55%;
+}
 
-        .timeline-title {
-            font-size: 1.4em;
-            color: #1e3c72;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
+.timeline-content:hover {
+    transform: translateY(-6px);
+}
 
-        .timeline-role {
-            color: #7e22ce;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
+.timeline-icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
 
-        .timeline-date {
-            color: #999;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
+.timeline-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #1e3c72;
+    margin-bottom: 6px;
+}
 
-        .timeline-description {
-            color: #555;
-            line-height: 1.7;
-        }
+.timeline-role {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #7e22ce;
+    margin-bottom: 8px;
+}
+
+.timeline-date {
+    font-size: 0.95em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.timeline-description {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.7;
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Timeline Fix */
+@media (max-width: 768px) {
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-marker {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 50px !important;
+        margin-right: 0 !important;
+    }
+}
 
         /* Certifications Grid */
         .certifications-grid {
@@ -1116,59 +1150,65 @@
     </div>
 </div>
 
-        <!-- Journey Page -->
-        <div id="journey" class="page-section">
-            <div class="content-card">
-                <h2>My Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-title">Internship on AWS DevOps</div>
-                            <div class="timeline-role">AWS Developer</div>
-                            <div class="timeline-date">May 2025 – July 2025 | Technical Hub, Surampalem, Andhra Pradesh</div>
-                            <div class="timeline-description">
-                                Gained comprehensive hands-on experience in AWS DevOps practices and tools. Worked extensively 
-                                with containerization using Docker, implemented CI/CD pipelines with Jenkins, automated 
-                                infrastructure provisioning with Terraform, managed configuration with Ansible, and orchestrated 
-                                containers using Kubernetes. This internship provided deep insights into modern DevOps practices 
-                                and cloud-native application deployment strategies.
-                            </div>
-                        </div>
-                    </div>
+<!-- Journey Page -->
+<div id="journey" class="page-section">
+    <div class="content-card">
+        <h2>My Journey</h2>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-title">Summer Internship on AWS Development</div>
-                            <div class="timeline-role">AWS Developer</div>
-                            <div class="timeline-date">May 2024 – July 2024 | Technical Hub, Surampalem, Andhra Pradesh</div>
-                            <div class="timeline-description">
-                                Focused on AWS cloud services development and automation. Developed a comprehensive mini project 
-                                involving the automation and management of core AWS services including EC2 (Elastic Compute Cloud), 
-                                S3 (Simple Storage Service), and RDS (Relational Database Service) using the Python Boto3 SDK. 
-                                Learned to programmatically control cloud resources, implement automation scripts, and optimize 
-                                cloud infrastructure costs.
-                            </div>
-                        </div>
-                    </div>
+        <div class="timeline">
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-title">Started B.Tech in CSE (AI & ML)</div>
-                            <div class="timeline-role">Student</div>
-                            <div class="timeline-date">September 2022 | Aditya College of Engineering and Technology</div>
-                            <div class="timeline-description">
-                                Began my journey in Computer Science Engineering with specialization in Artificial Intelligence 
-                                and Machine Learning at JNTUK affiliated college. Started building strong fundamentals in 
-                                programming, data structures, algorithms, and exploring the fascinating world of AI/ML technologies.
-                            </div>
-                        </div>
+            <!-- ITEM 1 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-marker glow"></div>
+                <div class="timeline-content card-animate">
+                    <div class="timeline-icon">⚙️</div>
+                    <div class="timeline-title">Internship on AWS DevOps</div>
+                    <div class="timeline-role">AWS DevOps Engineer Intern</div>
+                    <div class="timeline-date">May 2025 – July 2025 • Technical Hub</div>
+                    <div class="timeline-description">
+                        Hands-on experience in modern DevOps workflows including Docker, Jenkins CI/CD,
+                        Terraform IaC, Kubernetes orchestration, and automation scripting. Improved build and 
+                        deployment efficiency while gaining real-time experience in cloud-native systems.
                     </div>
                 </div>
             </div>
+
+            <!-- ITEM 2 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-marker glow"></div>
+                <div class="timeline-content card-animate">
+                    <div class="timeline-icon">☁️</div>
+                    <div class="timeline-title">AWS Development Internship</div>
+                    <div class="timeline-role">AWS Cloud Developer Intern</div>
+                    <div class="timeline-date">May 2024 – July 2024 • Technical Hub</div>
+                    <div class="timeline-description">
+                        Automated EC2, S3, RDS, and IAM operations using AWS Boto3 Python SDK.
+                        Built scalable mini-projects demonstrating automation, cloud monitoring,
+                        and infrastructure provisioning capabilities.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-marker glow"></div>
+                <div class="timeline-content card-animate">
+                    <div class="timeline-icon">🎓</div>
+                    <div class="timeline-title">Started B.Tech in CSE (AI & ML)</div>
+                    <div class="timeline-role">Computer Science Student</div>
+                    <div class="timeline-date">September 2022 • ACET, JNTUK</div>
+                    <div class="timeline-description">
+                        Began my academic journey in CSE with a specialization in AI & ML.
+                        Built strong foundations in programming (Python, Java, C),
+                        data structures, algorithms, and mathematical concepts powering AI systems.
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+</div>
+
 
         <!-- Certifications Page -->
         <div id="certifications" class="page-section">
