@@ -719,6 +719,77 @@
                 padding: 30px 20px;
             }
         }
+        .project-filter {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    margin: 5px;
+    border-radius: 25px;
+    border: none;
+    background: #eee;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #7e22ce;
+    color: white;
+}
+
+.project-card {
+    border: 2px solid transparent;
+    transition: 0.4s;
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #7e22ce;
+    box-shadow: 0 10px 30px rgba(126, 34, 206, 0.3);
+}
+
+.project-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.project-btn.github {
+    background: #333;
+    color: white;
+}
+
+.project-btn.demo {
+    background: #7e22ce;
+    color: white;
+}
+
+.fade {
+    animation: fadeInUp 0.7s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.load-more-btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: #1e3c72;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
     </style>
 </head>
 <body>
@@ -857,69 +928,193 @@
         </div>
 
         <!-- Projects Page -->
-        <div id="projects" class="page-section">
-            <div class="content-card">
-                <h2>My Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">🚗 Traffic Violation Reporter with Vehicle Number Detection</div>
-                            <div class="project-date">June 2025</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">
-                                Developed an AI-powered web application that automatically detects and classifies traffic violations 
-                                using vehicle number plate recognition. The system achieved 95% detection accuracy in real-world tests 
-                                and includes automated email notifications for violation reports.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">AWS Rekognition</span>
-                                <span class="tech-tag">AWS Bedrock</span>
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Computer Vision</span>
-                                <span class="tech-tag">Email Integration</span>
-                            </div>
-                            <p style="color: #666; margin-bottom: 10px;"><strong>Key Features:</strong></p>
-                            <ul style="color: #666; margin-left: 20px; margin-bottom: 20px;">
-                                <li>Automated vehicle number plate detection and recognition</li>
-                                <li>Traffic violation classification system</li>
-                                <li>Real-time email notification system</li>
-                                <li>95% accuracy in detection tests</li>
-                            </ul>
-                        </div>
+        <!-- PROJECTS PAGE -->
+<div id="projects" class="page-section">
+    <div class="content-card">
+        <h2>My Projects</h2>
+
+        <!-- FILTER BUTTONS -->
+        <div class="project-filter">
+            <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+            <button class="filter-btn" onclick="filterProjects('ai')">AI</button>
+            <button class="filter-btn" onclick="filterProjects('cloud')">Cloud</button>
+            <button class="filter-btn" onclick="filterProjects('web')">Web</button>
+            <button class="filter-btn" onclick="filterProjects('java')">Java</button>
+        </div>
+
+        <div class="projects-grid" id="projectGrid">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card fade project-item ai cloud">
+                <div class="project-header">
+                    <div class="project-title">🚗 Traffic Violation Reporter</div>
+                    <div class="project-date">June 2025</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        AI-powered system that detects traffic violations using AWS Rekognition and
+                        number-plate recognition. Achieved 95% accuracy and includes automated reporting.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS Rekognition</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Bedrock</span>
+                        <span class="tech-tag">AI</span>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">👤 Face Recognition Attendance System</div>
-                            <div class="project-date">October 2024</div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-description">
-                                Created an intelligent attendance management system that leverages facial recognition technology 
-                                to automatically mark attendance. The system uses webcam integration for real-time face capture 
-                                and recognition, storing all data securely in AWS cloud services.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Streamlit</span>
-                                <span class="tech-tag">AWS S3</span>
-                                <span class="tech-tag">AWS Rekognition</span>
-                                <span class="tech-tag">DynamoDB</span>
-                                <span class="tech-tag">Python</span>
-                            </div>
-                            <p style="color: #666; margin-bottom: 10px;"><strong>Key Features:</strong></p>
-                            <ul style="color: #666; margin-left: 20px; margin-bottom: 20px;">
-                                <li>Real-time face capture via webcam</li>
-                                <li>Automated face recognition and matching</li>
-                                <li>Automatic attendance logging to database</li>
-                                <li>Secure cloud storage of face data</li>
-                                <li>User-friendly web interface</li>
-                            </ul>
-                        </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/22MH1A42G1/traffic-violation-reporter-with-vehicle-number-detection" 
+                           target="_blank" class="project-btn github">GitHub →</a>
+
+                        <a href="#" class="project-btn demo">Live Demo →</a>
                     </div>
                 </div>
             </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card fade project-item ai cloud">
+                <div class="project-header">
+                    <div class="project-title">👤 Face Recognition Attendance System</div>
+                    <div class="project-date">October 2024</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Automated real-time attendance using AWS Rekognition, S3, Streamlit UI, and DynamoDB.
+                        Reduced manual attendance time by 90%.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS S3</span>
+                        <span class="tech-tag">Rekognition</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/22MH1A42G1/Face-Recognition-Attendance-System-repository-iship"
+                           target="_blank" class="project-btn github">GitHub →</a>
+
+                        <a href="#" class="project-btn demo">Live Demo →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card fade project-item cloud">
+                <div class="project-header">
+                    <div class="project-title">⚙️ AWS Automation With Boto3</div>
+                    <div class="project-date">2024</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Automated EC2, S3, RDS, IAM using Python Boto3. Reduced cloud ops manual workload by 50%.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Boto3</span>
+                        <span class="tech-tag">Automation</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/22MH1A42G1/Aws-Automation-With-Boto3"
+                           target="_blank" class="project-btn github">GitHub →</a>
+
+                        <a href="#" class="project-btn demo">Live Demo →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-card fade project-item web ai">
+                <div class="project-header">
+                    <div class="project-title">🧠 AWS Serverless Sentiment Analysis</div>
+                    <div class="project-date">2024</div>
+                </div>
+
+                <div class="project-body">
+                    <p class="project-description">
+                        Built a sentiment analysis API using AWS Lambda + API Gateway + Comprehend.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">Lambda</span>
+                        <span class="tech-tag">API Gateway</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/22MH1A42G1/AWS-Serverless-Sentiment-Analysis"
+                           target="_blank" class="project-btn github">GitHub →</a>
+
+                        <a href="#" class="project-btn demo">Live Demo →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 5 -->
+            <div class="project-card fade project-item java web">
+                <div class="project-header">
+                    <div class="project-title">🎓 Faculty Feedback System (Java + MySQL)</div>
+                    <div class="project-date">2023</div>
+                </div>
+
+                <div class="project-body">
+                    <p class="project-description">
+                        Desktop-based faculty feedback system created using Java, Swing, AWT and MySQL DB.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Swing</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/22MH1A42G1/FacultyFeedback_SkillUpCoder_Project_team14"
+                           target="_blank" class="project-btn github">GitHub →</a>
+
+                        <a href="#" class="project-btn demo">Live Demo →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 6 -->
+            <div class="project-card fade project-item cloud web">
+                <div class="project-header">
+                    <div class="project-title">🔐 AWS Secure File Storage</div>
+                    <div class="project-date">2024</div>
+                </div>
+
+                <div class="project-body">
+                    <p class="project-description">
+                        Secure web-based file uploader directly to AWS S3 without CLI or Console access.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS S3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/22MH1A42G1/AWS-Secure-Files-storage"
+                           target="_blank" class="project-btn github">GitHub →</a>
+
+                        <a href="#" class="project-btn demo">Live Demo →</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <div style="text-align:center; margin-top:30px;">
+            <button class="load-more-btn" onclick="loadMoreProjects()">Load More Projects ↓</button>
+        </div>
+    </div>
+</div>
 
         <!-- Journey Page -->
         <div id="journey" class="page-section">
@@ -1244,6 +1439,36 @@
                 showPage(hash);
             }
         });
+        function filterProjects(category) {
+    let items = document.querySelectorAll(".project-item");
+    let buttons = document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(b => b.classList.remove("active"));
+    event.target.classList.add("active");
+
+    items.forEach(item => {
+        if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+
+let visibleProjects = 3;
+function loadMoreProjects() {
+    const items = document.querySelectorAll(".project-item");
+
+    for (let i = visibleProjects; i < visibleProjects + 3; i++) {
+        if (items[i]) items[i].style.display = "block";
+    }
+    visibleProjects += 3;
+
+    if (visibleProjects >= items.length) {
+        document.querySelector(".load-more-btn").style.display = "none";
+    }
+}
+
     </script>
 </body>
 </html>
