@@ -1,229 +1,201 @@
-/**
-* Template Name: MyResume
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+(() => {
+  'use strict';
 
-(function() {
-  "use strict";
+  const docEl = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinksWrap = document.getElementById('site-nav');
+  const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+  const sections = Array.from(document.querySelectorAll('main section[id]'));
+  const revealTargets = document.querySelectorAll('.reveal');
+  const typedText = document.getElementById('typed-text');
+  const parallaxEl = document.querySelector('.parallax');
+  const form = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
 
-  /**
-   * Header toggle
-   */
-  const headerToggleBtn = document.querySelector('.header-toggle');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function headerToggle() {
-    document.querySelector('#header').classList.toggle('header-show');
-    headerToggleBtn.classList.toggle('bi-list');
-    headerToggleBtn.classList.toggle('bi-x');
-  }
-  headerToggleBtn.addEventListener('click', headerToggle);
+  const themeKey = 'portfolio-theme';
+  const osPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const initialTheme = localStorage.getItem(themeKey) || (osPrefersLight ? 'light' : 'dark');
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.header-show')) {
-        headerToggle();
-      }
-    });
-
-  });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
-    });
-  });
-
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
-
-  /**
-   * Scroll top button
-   */
-  let scrollTop = document.querySelector('.scroll-top');
-
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+  function setTheme(theme) {
+    docEl.setAttribute('data-theme', theme);
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+
+  setTheme(initialTheme);
+
+  themeToggle?.addEventListener('click', () => {
+    const nextTheme = docEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    localStorage.setItem(themeKey, nextTheme);
   });
 
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = navLinksWrap.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
 
-  /**
-   * Animation on scroll function and init
-   */
-  function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-  }
-  window.addEventListener('load', aosInit);
-
-  /**
-   * Init typed.js
-   */
-  const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
-
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
-
-  /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (navLinksWrap.classList.contains('open')) {
+        navLinksWrap.classList.remove('open');
+        menuToggle?.setAttribute('aria-expanded', 'false');
       }
     });
   });
 
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
-
-  /**
-   * Init isotope layout and filters
-   */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
         }
-      }, false);
-    });
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.14 }
+  );
 
-  });
+  revealTargets.forEach((el) => revealObserver.observe(el));
 
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        const targetId = entry.target.id;
+        navLinks.forEach((link) => {
+          const isMatch = link.getAttribute('href') === `#${targetId}`;
+          link.classList.toggle('active', isMatch);
+        });
+      });
+    },
+    { threshold: 0.45 }
+  );
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
+  sections.forEach((section) => sectionObserver.observe(section));
+
+  const phrases = [
+    'Full Stack Developer',
+    'AWS Cloud Engineer',
+    'AI and ML Enthusiast',
+    'Problem Solver'
+  ];
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function runTypingLoop() {
+    if (!typedText || reducedMotion) {
+      if (typedText) {
+        typedText.textContent = phrases[0];
       }
-    });
-  }
-
-  window.addEventListener("load", initSwiper);
-
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
-  window.addEventListener('load', function(e) {
-    if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
+      return;
     }
+
+    const current = phrases[phraseIndex];
+    const nextLength = deleting ? charIndex - 1 : charIndex + 1;
+    typedText.textContent = current.slice(0, nextLength);
+    charIndex = nextLength;
+
+    let delay = deleting ? 42 : 86;
+
+    if (!deleting && charIndex === current.length) {
+      delay = 1350;
+      deleting = true;
+    } else if (deleting && charIndex === 0) {
+      deleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      delay = 280;
+    }
+
+    window.setTimeout(runTypingLoop, delay);
+  }
+
+  runTypingLoop();
+
+  if (parallaxEl && !reducedMotion) {
+    const onParallax = () => {
+      const y = Math.min(window.scrollY * 0.18, 90);
+      parallaxEl.style.transform = `translate3d(0, ${y}px, 0)`;
+    };
+    window.addEventListener('scroll', onParallax, { passive: true });
+    onParallax();
+  }
+
+  const tiltCards = document.querySelectorAll('.tilt-card');
+  tiltCards.forEach((card) => {
+    card.addEventListener('mousemove', (event) => {
+      if (reducedMotion) {
+        return;
+      }
+      const rect = card.getBoundingClientRect();
+      const px = (event.clientX - rect.left) / rect.width;
+      const py = (event.clientY - rect.top) / rect.height;
+      const rotateY = (px - 0.5) * 9;
+      const rotateX = (0.5 - py) * 8;
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
   });
 
-  /**
-   * Navmenu Scrollspy
-   */
-  let navmenulinks = document.querySelectorAll('.navmenu a');
+  const progressBars = document.querySelectorAll('.progress > span');
+  const skillObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        const bar = entry.target;
+        bar.style.width = `${bar.dataset.width || 0}%`;
+        observer.unobserve(bar);
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-  function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
-      }
-    })
+  progressBars.forEach((bar) => skillObserver.observe(bar));
+
+  function showFormStatus(message, isError = false) {
+    if (!formStatus) {
+      return;
+    }
+    formStatus.textContent = message;
+    formStatus.style.color = isError ? '#ff6d86' : '';
   }
-  window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
 
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      showFormStatus('Please complete all required fields with valid values.', true);
+      return;
+    }
+
+    const data = new FormData(form);
+    const message = String(data.get('message') || '').trim();
+    if (message.length < 20) {
+      showFormStatus('Message must be at least 20 characters.', true);
+      return;
+    }
+
+    const subject = encodeURIComponent(String(data.get('subject') || 'Portfolio inquiry'));
+    const body = encodeURIComponent(
+      `Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\nMessage:\n${message}`
+    );
+    window.location.href = `mailto:adityaindana@gmail.com?subject=${subject}&body=${body}`;
+
+    form.reset();
+    showFormStatus('Thanks for reaching out. Your email app should now open.');
+  });
 })();
