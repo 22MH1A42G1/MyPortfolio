@@ -189,10 +189,12 @@ a {
 .hero-bg {
     position: absolute;
     inset: -8% -5%;
-    background:
+    /*background:
+        linear-gradient(rgba(10, 16, 34, 0.72), rgba(10, 16, 34, 0.68)),
+        url('../img/hero-bg.jpg') center / cover no-repeat,
         radial-gradient(circle at 20% 30%, rgba(114, 198, 255, 0.28), transparent 42%),
         radial-gradient(circle at 70% 20%, rgba(161, 108, 255, 0.32), transparent 35%),
-        radial-gradient(circle at 60% 75%, rgba(58, 119, 255, 0.2), transparent 45%);
+        radial-gradient(circle at 60% 75%, rgba(58, 119, 255, 0.2), transparent 45%);*/
     filter: blur(8px);
     z-index: -1;
     transition: transform 0.25s linear;
@@ -402,6 +404,15 @@ a {
     box-shadow: 0 12px 30px rgba(92, 132, 255, 0.2);
 }
 
+.project-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 0.9rem;
+    border: 1px solid var(--border);
+}
+
 .project-top {
     display: flex;
     align-items: baseline;
@@ -430,6 +441,37 @@ a {
     border-radius: 999px;
     padding: 0.25rem 0.55rem;
     color: var(--text);
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.certificate-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-solid);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certificate-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.certificate-card h3 {
+    font-size: 1rem;
+    padding: 0.9rem 1rem 1.05rem;
+}
+
+.certificate-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(92, 132, 255, 0.2);
 }
 
 .skills-grid {
@@ -576,6 +618,10 @@ a:focus-visible {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .certificates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .split,
     .skills-grid {
         grid-template-columns: 1fr;
@@ -615,6 +661,10 @@ a:focus-visible {
     }
 
     .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificates-grid {
         grid-template-columns: 1fr;
     }
 
