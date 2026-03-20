@@ -204,6 +204,26 @@ a {
     padding: 4rem 0;
 }
 
+.hero-wrapper {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.hero-image {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .eyebrow {
     display: inline-block;
     border: 1px solid var(--border);
@@ -308,6 +328,34 @@ a {
     font-size: 0.85rem;
 }
 
+/* Profile Photo Styling */
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: block;
+    animation: fadeIn 1.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .split {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
@@ -332,43 +380,165 @@ a {
     font-weight: 600;
 }
 
-.timeline {
-    position: relative;
-    margin-top: 2rem;
-    padding-left: 2.2rem;
+
+.journey-intro {
+    margin-bottom: 1.5rem;
+    max-width: 78ch;
 }
 
-.timeline::before {
+.timeline-highway {
+    position: relative;
+    display: grid;
+    grid-template-columns: 94px 1fr;
+    gap: 1.2rem;
+    align-items: stretch;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 4px);
+    padding: 1.4rem 1rem 1.7rem;
+    background:
+        radial-gradient(circle at 8% 0%, rgba(118, 180, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 90% 110%, rgba(171, 113, 255, 0.2), transparent 32%),
+        color-mix(in oklab, var(--surface-solid) 78%, transparent);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.highway-track {
+    position: relative;
+    min-height: 560px;
+    border-radius: 60px;
+    border: 1px solid color-mix(in oklab, var(--text) 18%, transparent);
+    background: linear-gradient(180deg, #485775 0%, #2f3a53 100%);
+    box-shadow: inset 0 8px 14px rgba(0, 0, 0, 0.24);
+}
+
+.highway-lane {
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    left: 50%;
+    width: 8px;
+    transform: translateX(-50%);
+    background: repeating-linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.94) 0,
+        rgba(255, 255, 255, 0.94) 26px,
+        transparent 26px,
+        transparent 56px
+    );
+    border-radius: 999px;
+    animation: laneFlow 3.8s linear infinite;
+    opacity: 0.95;
+}
+
+.highway-car {
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    width: 46px;
+    height: 88px;
+    transform: translateX(-50%);
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f86f4c 0%, #ffb24f 100%);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
+    transition: top 0.2s linear;
+}
+
+.highway-car::before,
+.highway-car::after {
     content: '';
     position: absolute;
-    left: 0.55rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent), var(--accent-2));
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 1.3rem;
-}
-
-.timeline-dot {
-    width: 0.85rem;
-    height: 0.85rem;
+    left: -8px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    background: var(--accent);
-    position: absolute;
-    top: 1.1rem;
-    left: -2rem;
-    box-shadow: 0 0 0 5px color-mix(in oklab, var(--accent) 30%, transparent);
+    background: #1b2233;
+    border: 2px solid #96a7d2;
 }
 
-.timeline-card {
+.highway-car::before {
+    top: 12px;
+}
+
+.highway-car::after {
+    bottom: 12px;
+}
+
+.car-window {
+    position: absolute;
+    inset: 14px 6px 14px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(196, 234, 255, 0.96), rgba(118, 162, 235, 0.82));
+}
+
+.journey-milestones {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.journey-milestone {
+    position: relative;
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr);
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.milestone-marker {
+    grid-column: 1;
+    justify-self: center;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: color-mix(in oklab, var(--accent) 85%, white);
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent) 26%, transparent);
+}
+
+.milestone-symbol {
+    grid-column: 1;
+    justify-self: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-title);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background-image: var(--glow);
+    box-shadow: 0 10px 22px rgba(101, 165, 255, 0.34);
+}
+
+.milestone-card {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 100%;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1.2rem;
-    background: var(--surface);
+    padding: 1rem;
+    background: color-mix(in oklab, var(--surface) 92%, transparent);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.journey-milestone:hover .milestone-card {
+    transform: translateY(-5px);
+    border-color: color-mix(in oklab, var(--accent) 58%, var(--border));
+    box-shadow: 0 14px 28px rgba(77, 111, 201, 0.24);
+}
+
+.journey-milestone.is-passed .milestone-marker {
+    background: #7df5c0;
+    box-shadow: 0 0 0 6px rgba(125, 245, 192, 0.28);
+}
+
+.journey-milestone.is-passed .milestone-symbol {
+    filter: saturate(1.2);
+}
+
+.journey-milestone.is-passed .milestone-card {
+    border-color: color-mix(in oklab, #7df5c0 52%, var(--border));
 }
 
 .timeline-kicker {
@@ -613,6 +783,15 @@ a:focus-visible {
     transform: translateY(34px);
 }
 
+@keyframes laneFlow {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -56px;
+    }
+}
+
 @media (max-width: 992px) {
     .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -629,6 +808,14 @@ a:focus-visible {
 
     .quick-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timeline-highway {
+        grid-template-columns: 82px 1fr;
+    }
+
+    .highway-track {
+        min-height: 520px;
     }
 }
 
@@ -666,6 +853,63 @@ a:focus-visible {
 
     .certificates-grid {
         grid-template-columns: 1fr;
+    }
+
+    .timeline-highway {
+        grid-template-columns: 58px 1fr;
+        padding: 1.1rem 0.75rem 1.2rem;
+    }
+
+    .highway-track {
+        min-height: 500px;
+        border-radius: 40px;
+    }
+
+    .highway-car {
+        width: 40px;
+        height: 76px;
+    }
+
+    .highway-car::before,
+    .highway-car::after {
+        width: 14px;
+        height: 14px;
+        left: -6px;
+    }
+
+    .car-window {
+        inset: 12px 5px 12px;
+    }
+
+    .journey-milestone {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 0.7rem;
+    }
+
+    .milestone-symbol {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+    }
+
+    .milestone-card {
+        padding: 0.85rem;
+    }
+
+    .hero-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .hero-image {
+        flex: 1 1 100%;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
     }
 
     .hero {

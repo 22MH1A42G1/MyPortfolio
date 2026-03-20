@@ -10,6 +10,10 @@
   const revealTargets = document.querySelectorAll('.reveal');
   const typedText = document.getElementById('typed-text');
   const parallaxEl = document.querySelector('.parallax');
+  const journeySection = document.getElementById('journey');
+  const highwayTrack = document.querySelector('.highway-track');
+  const highwayCar = document.getElementById('highway-car');
+  const journeyStops = Array.from(document.querySelectorAll('.journey-milestone'));
   const form = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
 
@@ -128,6 +132,66 @@
     window.addEventListener('scroll', onParallax, { passive: true });
     onParallax();
   }
+
+  function initJourneyDrive() {
+    if (!journeySection || !highwayTrack || !highwayCar) {
+      return;
+    }
+
+    const milestoneWrap = journeySection.querySelector('.journey-milestones');
+
+    journeyStops.forEach((stop, index) => {
+      stop.style.transitionDelay = `${index * 90}ms`;
+    });
+
+    if (reducedMotion) {
+      highwayCar.style.top = '1rem';
+      return;
+    }
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const updateDrive = () => {
+      if (milestoneWrap) {
+        const wrapHeight = Math.ceil(milestoneWrap.getBoundingClientRect().height);
+        const trackMin = 460;
+        highwayTrack.style.minHeight = `${Math.max(wrapHeight, trackMin)}px`;
+      }
+
+      const sectionRect = journeySection.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const start = viewportHeight * 0.85;
+      const end = viewportHeight * 0.2;
+      const rawProgress = (start - sectionRect.top) / (start - end + sectionRect.height);
+      const progress = clamp(rawProgress, 0, 1);
+
+      const usableTrack = Math.max(highwayTrack.clientHeight - highwayCar.offsetHeight - 32, 0);
+      const y = 16 + usableTrack * progress;
+      highwayCar.style.top = `${y}px`;
+
+      journeyStops.forEach((stop) => {
+        const stopValue = Number(stop.dataset.stop || 0);
+        stop.classList.toggle('is-passed', progress >= stopValue);
+      });
+    };
+
+    let rafId = 0;
+    const scheduleUpdate = () => {
+      if (rafId) {
+        return;
+      }
+      rafId = window.requestAnimationFrame(() => {
+        rafId = 0;
+        updateDrive();
+      });
+    };
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    updateDrive();
+  }
+
+  initJourneyDrive();
 
   const tiltCards = document.querySelectorAll('.tilt-card');
   tiltCards.forEach((card) => {

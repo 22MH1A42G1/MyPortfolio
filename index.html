@@ -43,16 +43,22 @@
     <section id="home" class="hero section reveal">
       <div class="hero-bg parallax" aria-hidden="true"></div>
       <div class="container hero-content">
-        <p class="eyebrow">Aditya Indana Portfolio</p>
-        <h1>Building reliable digital products with cloud-first engineering.</h1>
-        <p class="typed-line">I am a <span id="typed-text" class="typed-text"></span><span class="typed-cursor" aria-hidden="true">|</span></p>
-        <p class="hero-copy">
-          I design and ship robust applications with modern frontend architecture, scalable backend services,
-          and AWS-native automation. My focus is creating software that is fast, accessible, and trusted by users.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">View Projects</a>
-          <a class="btn btn-secondary" href="#contact">Book a Conversation</a>
+        <div class="hero-wrapper">
+          <div class="hero-text">
+            <p class="eyebrow">Aditya Indana Portfolio</p>
+            <p class="typed-line">I am a <span id="typed-text" class="typed-text"></span><span class="typed-cursor" aria-hidden="true">|</span></p>
+            <p class="hero-copy">
+              I enjoy solving difficult engineering problems, improving delivery speed, and building features that users can trust.
+              My workflow blends clean architecture, observability, and pragmatic UI design.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">View Projects</a>
+              <a class="btn btn-secondary" href="#contact">Book a Conversation</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="assets/img/MyProfile.png" alt="Aditya Indana" class="profile-photo">
+          </div>
         </div>
         <ul class="quick-stats" aria-label="Portfolio highlights">
           <li><strong>800+</strong><span>Problems Solved</span></li>
@@ -71,10 +77,6 @@
             I am Aditya Indana, a Computer Science student specializing in AI &amp; ML, with hands-on experience in cloud platforms,
             DevOps workflows, and production-oriented web development.
           </p>
-          <h6>
-            I enjoy solving difficult engineering problems, improving delivery speed, and building features that users can trust.
-            My workflow blends clean architecture, observability, and pragmatic UI design.
-          </h6>
           <a href="https://drive.google.com/file/d/1tP3q7mxSR8EHVNJbeVnX9vn1h9FIhWKj/view?usp=drive_link" class="text-link" target="_blank">View detailed resume</a>
         </article>
 
@@ -91,51 +93,66 @@
     <section id="journey" class="section reveal">
       <div class="container">
         <h2>Experience & Education Timeline</h2>
-        <div class="timeline" aria-label="Career journey timeline">
-          <article class="timeline-item reveal slide-up">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <p class="timeline-kicker">November 2025 - February 2026</p>
-              <h3>AIML Internship</h3>
-              <p>Developed a weather-based wind turbine energy output prediction system; led the team and managed documentation, video presentation, and overall project execution.</p>
+        <p class="journey-intro">A scrolling road map of my growth, where each stop highlights a major internship and academic milestone.</p>
+        <div class="timeline-highway" aria-label="Career journey highway timeline">
+          <div class="highway-track" aria-hidden="true">
+            <div class="highway-lane"></div>
+            <div class="highway-car" id="highway-car">
+              <span class="car-window" aria-hidden="true"></span>
             </div>
-          </article>
+          </div>
 
-          <article class="timeline-item reveal slide-up">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <p class="timeline-kicker">July 2025 - October 2025</p>
-              <h3>TCS Salesforce Developer Internship</h3>
-              <p>Here I worked on developing and maintaining Salesforce applications, focusing on customizing the platform to meet specific business requirements.</p>
-            </div>
-          </article>
+          <div class="journey-milestones">
+            <article class="journey-milestone reveal slide-up" data-stop="0.12">
+              <div class="milestone-marker" aria-hidden="true"></div>
+              <div class="milestone-symbol">AI</div>
+              <div class="milestone-card">
+                <p class="timeline-kicker">Nov 2025 - Feb 2026</p>
+                <h3>AIML Internship</h3>
+                <p>Built a weather-driven wind energy prediction system and coordinated delivery, documentation, and presentation.</p>
+              </div>
+            </article>
 
-          <article class="timeline-item reveal slide-up">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <p class="timeline-kicker">May 2025 - Jul 2025</p>
-              <h3>AWS DevOps Internship</h3>
-              <p>Implemented CI/CD with Jenkins, containerized services with Docker, and automated IaC pipelines using Terraform and Kubernetes.</p>
-            </div>
-          </article>
+            <article class="journey-milestone reveal slide-up" data-stop="0.35">
+              <div class="milestone-marker" aria-hidden="true"></div>
+              <div class="milestone-symbol">SF</div>
+              <div class="milestone-card">
+                <p class="timeline-kicker">Jul 2025 - Oct 2025</p>
+                <h3>TCS Salesforce Developer Internship</h3>
+                <p>Customized Salesforce apps to match business workflows, improve usability, and accelerate internal operations.</p>
+              </div>
+            </article>
 
-          <article class="timeline-item reveal slide-up">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <p class="timeline-kicker">May 2024 - Jul 2024</p>
-              <h3>AWS Cloud Developer Internship</h3>
-              <p>Built Boto3 automation for EC2, S3, RDS, and IAM to reduce repetitive cloud operations and improve deployment consistency.</p>
-            </div>
-          </article>
+            <article class="journey-milestone reveal slide-up" data-stop="0.55">
+              <div class="milestone-marker" aria-hidden="true"></div>
+              <div class="milestone-symbol">CI</div>
+              <div class="milestone-card">
+                <p class="timeline-kicker">May 2025 - Jul 2025</p>
+                <h3>AWS DevOps Internship</h3>
+                <p>Implemented CI/CD with Jenkins, Docker, Terraform, and Kubernetes for reliable cloud-native releases.</p>
+              </div>
+            </article>
 
-          <article class="timeline-item reveal slide-up">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <p class="timeline-kicker">Sep 2022 - Present</p>
-              <h3>B.Tech in CSE (AI &amp; ML)</h3>
-              <p>Developed strong foundations in algorithms, data structures, full stack development, and applied machine learning.</p>
-            </div>
-          </article>
+            <article class="journey-milestone reveal slide-up" data-stop="0.76">
+              <div class="milestone-marker" aria-hidden="true"></div>
+              <div class="milestone-symbol">AWS</div>
+              <div class="milestone-card">
+                <p class="timeline-kicker">May 2024 - Jul 2024</p>
+                <h3>AWS Cloud Developer Internship</h3>
+                <p>Automated EC2, S3, RDS, and IAM operations with Boto3 to reduce repetitive cloud management tasks.</p>
+              </div>
+            </article>
+
+            <article class="journey-milestone reveal slide-up" data-stop="0.92">
+              <div class="milestone-marker" aria-hidden="true"></div>
+              <div class="milestone-symbol">EDU</div>
+              <div class="milestone-card">
+                <p class="timeline-kicker">Sep 2022 - Present</p>
+                <h3>B.Tech in CSE (AI &amp; ML)</h3>
+                <p>Strengthened foundations in algorithms, software engineering, and applied ML through consistent project work.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
