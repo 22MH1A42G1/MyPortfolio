@@ -466,25 +466,33 @@
       submitButton.textContent = 'Sending...';
     }
 
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: {
-        Accept: 'application/json'
+    const parseContactResponse = async (response) => {
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || !payload.success) {
+        throw new Error(payload.message || 'Unable to send your message right now.');
       }
-    })
-      .then(async (response) => {
-        const payload = await response.json().catch(() => ({}));
+      return payload;
+    };
 
-        if (!response.ok || !payload.success) {
-          throw new Error(payload.message || 'Unable to send your message right now.');
+    const sendToEndpoint = (url) => {
+      const formPayload = new FormData(form);
+      return fetch(url, {
+        method: 'POST',
+        body: formPayload,
+        headers: {
+          Accept: 'application/json'
         }
+      }).then(parseContactResponse);
+    };
 
+    sendToEndpoint(form.action)
+      .catch(() => sendToEndpoint('https://formsubmit.co/ajax/adityaindana@gmail.com'))
+      .then((payload) => {
         form.reset();
         showFormStatus(payload.message || 'Thanks for reaching out. Your message has been sent.');
       })
-      .catch(() => {
-        showFormStatus('Unable to send your message right now. Please try again later.', true);
+      .catch((error) => {
+        showFormStatus(error.message || 'Unable to send your message right now. Please try again later.', true);
       })
       .finally(() => {
         if (submitButton) {
