@@ -566,7 +566,7 @@ a {
     border: 1px solid var(--border);
     background: var(--surface-solid);
     border-radius: var(--radius);
-    aspect-ratio: 4 / 3;
+    aspect-ratio: var(--project-ratio, 4 / 3);
     padding: 0;
     cursor: pointer;
     transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;

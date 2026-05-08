@@ -95,6 +95,31 @@
 
   sections.forEach((section) => sectionObserver.observe(section));
 
+  function setProjectCardRatio(card) {
+    const thumb = card.querySelector('.project-thumb');
+    if (!thumb) {
+      return;
+    }
+
+    const applyRatio = () => {
+      if (thumb.naturalWidth && thumb.naturalHeight) {
+        card.style.setProperty('--project-ratio', `${thumb.naturalWidth} / ${thumb.naturalHeight}`);
+      }
+    };
+
+    if (thumb.complete) {
+      applyRatio();
+      return;
+    }
+
+    thumb.addEventListener('load', applyRatio, { once: true });
+    thumb.addEventListener('error', () => {
+      card.style.removeProperty('--project-ratio');
+    }, { once: true });
+  }
+
+  projectCards.forEach((card) => setProjectCardRatio(card));
+
   const phrases = [
     'Full Stack Developer',
     'AWS Cloud Engineer',
