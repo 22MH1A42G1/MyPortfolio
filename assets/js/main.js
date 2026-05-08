@@ -344,6 +344,79 @@
     }
   });
 
+  // Project search and sort functionality
+  const projectSearch = document.getElementById('project-search');
+  const projectSortDropdown = document.getElementById('project-sort-dropdown');
+  let currentSortOrder = 'newest';
+  let currentSearchQuery = '';
+
+  function getProjectsGridContainer() {
+    return document.querySelector('.projects-grid');
+  }
+
+  function applyFiltersAndSort() {
+    const gridContainer = getProjectsGridContainer();
+    if (!gridContainer) {
+      return;
+    }
+
+    const query = currentSearchQuery.toLowerCase();
+    let visibleCards = [];
+
+    projectCards.forEach((card) => {
+      const title = (card.dataset.projectTitle || '').toLowerCase();
+      const description = (card.dataset.projectDescription || '').toLowerCase();
+      const tech = (card.dataset.projectTech || '').toLowerCase();
+      
+      const matchesSearch = !query || title.includes(query) || description.includes(query) || tech.includes(query);
+      
+      if (matchesSearch) {
+        card.classList.remove('hidden');
+        visibleCards.push(card);
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Sort visible cards
+    visibleCards.sort((cardA, cardB) => {
+      const titleA = (cardA.dataset.projectTitle || '').toLowerCase();
+      const titleB = (cardB.dataset.projectTitle || '').toLowerCase();
+      const yearA = parseInt(cardA.dataset.projectYear || '0');
+      const yearB = parseInt(cardB.dataset.projectYear || '0');
+
+      if (currentSortOrder === 'newest') {
+        return yearB - yearA;
+      } else if (currentSortOrder === 'oldest') {
+        return yearA - yearB;
+      } else if (currentSortOrder === 'a-z') {
+        return titleA.localeCompare(titleB);
+      } else if (currentSortOrder === 'z-a') {
+        return titleB.localeCompare(titleA);
+      }
+      return 0;
+    });
+
+    // Re-append cards in sorted order
+    visibleCards.forEach((card) => {
+      gridContainer.appendChild(card);
+    });
+  }
+
+  if (projectSearch) {
+    projectSearch.addEventListener('input', (event) => {
+      currentSearchQuery = event.target.value;
+      applyFiltersAndSort();
+    });
+  }
+
+  if (projectSortDropdown) {
+    projectSortDropdown.addEventListener('change', (event) => {
+      currentSortOrder = event.target.value;
+      applyFiltersAndSort();
+    });
+  }
+
   const progressBars = document.querySelectorAll('.progress > span');
   const skillObserver = new IntersectionObserver(
     (entries, observer) => {

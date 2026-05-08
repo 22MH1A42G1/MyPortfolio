@@ -552,6 +552,76 @@ a {
     margin-bottom: 1.1rem;
 }
 
+.projects-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.project-search {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border);
+    background: var(--surface-solid);
+    color: var(--text);
+    border-radius: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-search::placeholder {
+    color: var(--text-muted);
+}
+
+.project-search:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(101, 165, 255, 0.15);
+}
+
+.project-sort {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.project-sort__label {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.project-sort__dropdown {
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border);
+    background: var(--surface-solid);
+    color: var(--text);
+    border-radius: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-sort__dropdown:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(101, 165, 255, 0.15);
+}
+
+.project-sort__dropdown option {
+    background: var(--bg-soft);
+    color: var(--text);
+}
+
+.project-card.hidden {
+    display: none;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -953,6 +1023,19 @@ a:focus-visible {
 @media (max-width: 992px) {
     .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .projects-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .project-search {
+        min-width: unset;
+    }
+
+    .project-sort {
+        justify-content: space-between;
     }
 
     .certificates-grid {

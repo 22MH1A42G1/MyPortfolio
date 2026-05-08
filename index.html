@@ -161,6 +161,26 @@
       <div class="container">
         <h2>Selected Projects</h2>
         <p class="section-intro">Interactive case studies focused on cloud architecture, AI workflows, and developer tooling.</p>
+        
+        <div class="projects-controls">
+          <input 
+            type="text" 
+            id="project-search" 
+            class="project-search" 
+            placeholder="Search projects..." 
+            aria-label="Search projects by title or tech stack"
+          >
+          <div class="project-sort">
+            <label for="project-sort-dropdown" class="project-sort__label">Sort by:</label>
+            <select id="project-sort-dropdown" class="project-sort__dropdown" aria-label="Sort projects">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="a-z">A - Z</option>
+              <option value="z-a">Z - A</option>
+            </select>
+          </div>
+        </div>
+        
         <div class="projects-grid">
           <article class="project-card tilt-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="project-modal" data-project-title="HeartFL-Django" data-project-year="2026" data-project-image="assets/img/Project7.jpg" data-project-image-alt="HeartFL-Django project preview" data-project-description="A Django-based web application for heart disease risk prediction using federated learning principles. Hospitals can upload datasets and doctors can make patient-level predictions while maintaining privacy through distributed model training." data-project-tech="Django, SQLite, ML, HTML, CSS, JS" data-project-repo="https://github.com/22MH1A42G1/HeartFL-Django" data-project-demo="https://adityaindana.pythonanywhere.com/">
             <img src="assets/img/Project7.jpg" class="project-thumb" alt="HeartFL-Django project preview" loading="lazy" decoding="async">
