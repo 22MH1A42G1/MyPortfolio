@@ -1,41 +1,82 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+header('Content-Type: application/json; charset=UTF-8');
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Method not allowed.'
+    ]);
+    exit;
+}
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+$name = trim((string) ($_POST['name'] ?? ''));
+$email = trim((string) ($_POST['email'] ?? ''));
+$subject = trim((string) ($_POST['subject'] ?? ''));
+$message = trim((string) ($_POST['message'] ?? ''));
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+if ($name === '' || strlen($name) < 2) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Please enter your name.'
+    ]);
+    exit;
+}
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Please enter a valid email address.'
+    ]);
+    exit;
+}
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+if ($subject === '' || strlen($subject) < 4) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Please enter a subject.'
+    ]);
+    exit;
+}
 
-  echo $contact->send();
-?>
+if ($message === '' || strlen($message) < 20) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Message must be at least 20 characters.'
+    ]);
+    exit;
+}
+
+$recipient = 'adityaindana@gmail.com';
+$mailSubject = '[Portfolio] ' . preg_replace('/[\r\n]+/', ' ', $subject);
+$body = "Name: {$name}\n";
+$body .= "Email: {$email}\n";
+$body .= "Subject: {$subject}\n\n";
+$body .= "Message:\n{$message}\n";
+
+$headers = [];
+$headers[] = 'MIME-Version: 1.0';
+$headers[] = 'Content-Type: text/plain; charset=UTF-8';
+$headers[] = 'From: Aditya Indana <adityaindana@gmail.com>';
+$headers[] = 'Reply-To: ' . $name . ' <' . $email . '>';
+$headers[] = 'X-Mailer: PHP/' . phpversion();
+
+$sent = @mail($recipient, $mailSubject, $body, implode("\r\n", $headers));
+
+if (!$sent) {
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Email sending is not available on this server.'
+    ]);
+    exit;
+}
+
+echo json_encode([
+    'success' => true,
+    'message' => 'Thanks for reaching out. Your message has been sent.'
+]);

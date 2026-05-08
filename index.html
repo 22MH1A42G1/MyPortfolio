@@ -206,7 +206,7 @@
             </div>
           </article>
 
-          <article class="project-card tilt-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="project-modal" data-project-title="Traffic Violation Reporter" data-project-year="2025" data-project-image="assets/img/Project8.jpg" data-project-image-alt="Traffic Violation Reporter project preview" data-project-description="An AI-based violation detection pipeline using AWS Rekognition and number-plate processing to automate report generation." data-project-tech="Gmail SMTP, AWS Rekognition, Python, Bedrock" data-project-repo="https://github.com/22MH1A42G1/traffic-violation-reporter-with-vehicle-number-detection" data-project-demo="">
+          <article class="project-card tilt-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="project-modal" data-project-title="Traffic Violation Reporter" data-project-year="2025" data-project-image="assets/img/Project8.jpg" data-project-image-alt="Traffic Violation Reporter project preview" data-project-description="An AI-based violation detection pipeline using AWS Rekognition and number-plate processing to automate report generation." data-project-tech="Gmail SMTP, AWS Rekognition, Python Boto3, Bedrock, DynamoDB, EC2, IAM, Cognino, Streamlit" data-project-repo="https://github.com/22MH1A42G1/traffic-violation-reporter-with-vehicle-number-detection" data-project-demo="">
             <img src="assets/img/Project8.jpg" class="project-thumb" alt="Traffic Violation Reporter project preview" loading="lazy" decoding="async">
             <div class="project-overlay">
               <p class="project-year">2025</p>
@@ -214,7 +214,7 @@
             </div>
           </article>
 
-          <article class="project-card tilt-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="project-modal" data-project-title="Face Recognition Attendance System" data-project-year="2025" data-project-image="assets/img/Project5.jpg" data-project-image-alt="Face Recognition Attendance System project preview" data-project-description="A real-time attendance workflow built with Rekognition, S3, DynamoDB, and a streamlined Streamlit interface." data-project-tech="AWS, Streamlit, Python" data-project-repo="https://github.com/22MH1A42G1/Face-Recognition-Attendance-System-repository-iship" data-project-demo="">
+          <article class="project-card tilt-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="project-modal" data-project-title="Face Recognition Attendance System" data-project-year="2025" data-project-image="assets/img/Project5.jpg" data-project-image-alt="Face Recognition Attendance System project preview" data-project-description="A real-time attendance workflow built with Rekognition, S3, DynamoDB, and a streamlined Streamlit interface." data-project-tech="AWS Rekognition, S3, DynamoDB, Streamlit, Python" data-project-repo="https://github.com/22MH1A42G1/Face-Recognition-Attendance-System-repository-iship" data-project-demo="">
             <img src="assets/img/Project5.jpg" class="project-thumb" alt="Face Recognition Attendance System project preview" loading="lazy" decoding="async">
             <div class="project-overlay">
               <p class="project-year">2025</p>
@@ -261,19 +261,21 @@
       <div class="project-modal__backdrop" data-project-modal-close></div>
       <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
         <button type="button" class="project-modal__close" aria-label="Close project details" data-project-modal-close>×</button>
-        <img id="project-modal-image" class="project-modal__image" alt="" loading="lazy" decoding="async">
-        <div class="project-modal__body">
-          <p id="project-modal-year" class="project-modal__year"></p>
-          <h3 id="project-modal-title"></h3>
-          <p id="project-modal-description" class="project-modal__description"></p>
-          <div class="project-modal__tech">
-            <h4>Tech Stack:</h4>
-            <ul id="project-modal-tech-list"></ul>
+        <div class="project-modal__content">
+          <div class="project-modal__body">
+            <p id="project-modal-year" class="project-modal__year"></p>
+            <h3 id="project-modal-title"></h3>
+            <p id="project-modal-description" class="project-modal__description"></p>
+            <div class="project-modal__tech">
+              <h4>Tech Stack:</h4>
+              <ul id="project-modal-tech-list"></ul>
+            </div>
+            <div class="project-modal__actions">
+              <a id="project-modal-repo" class="btn btn-secondary" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+              <a id="project-modal-demo" class="btn btn-primary project-modal__demo is-disabled" href="#" aria-disabled="true">Live Demo</a>
+            </div>
           </div>
-          <div class="project-modal__actions">
-            <a id="project-modal-repo" class="btn btn-secondary" href="#" target="_blank" rel="noopener">GitHub Repo</a>
-            <a id="project-modal-demo" class="btn btn-primary project-modal__demo is-disabled" href="#" aria-disabled="true">Live Demo</a>
-          </div>
+          <img id="project-modal-image" class="project-modal__image" alt="" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -359,7 +361,7 @@
 
         <article class="panel panel-form">
           <h3>Send a message</h3>
-          <form id="contact-form" novalidate>
+          <form id="contact-form" action="forms/contact.php" method="post" novalidate>
             <label for="name">Name</label>
             <input id="name" name="name" type="text" required autocomplete="name" minlength="2" />
 

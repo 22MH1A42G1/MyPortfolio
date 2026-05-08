@@ -734,6 +734,13 @@ a {
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
 }
 
+.project-modal__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(240px, 0.95fr);
+    gap: 0;
+    align-items: stretch;
+}
+
 .project-modal__close {
     position: absolute;
     top: 0.9rem;
@@ -751,17 +758,20 @@ a {
 }
 
 .project-modal__image {
-    display: none;
+    display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    min-height: 100%;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     background: color-mix(in oklab, var(--bg) 72%, black);
+    border-left: 1px solid var(--border);
 }
 
 .project-modal__body {
     display: grid;
     gap: 0.9rem;
-    padding: 1.15rem 1.2rem 1.35rem;
+    padding: 1.35rem 1.4rem 1.5rem;
+    align-content: start;
 }
 
 .project-modal__year {
@@ -1090,6 +1100,22 @@ a:focus-visible {
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .project-modal__content {
+        grid-template-columns: 1fr;
+    }
+
+    .project-modal__image {
+        border-left: 0;
+        border-top: 1px solid var(--border);
+        aspect-ratio: 16 / 10;
+        min-height: 220px;
+        order: 2;
+    }
+
+    .project-modal__body {
+        order: 1;
     }
 
     .certificates-grid {

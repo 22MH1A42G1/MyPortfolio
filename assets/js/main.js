@@ -458,13 +458,39 @@
       return;
     }
 
-    const subject = encodeURIComponent(String(data.get('subject') || 'Portfolio inquiry'));
-    const body = encodeURIComponent(
-      `Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:adityaindana@gmail.com?subject=${subject}&body=${body}`;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton ? submitButton.textContent : '';
 
-    form.reset();
-    showFormStatus('Thanks for reaching out. Your email app should now open.');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    }
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: {
+        Accept: 'application/json'
+      }
+    })
+      .then(async (response) => {
+        const payload = await response.json().catch(() => ({}));
+
+        if (!response.ok || !payload.success) {
+          throw new Error(payload.message || 'Unable to send your message right now.');
+        }
+
+        form.reset();
+        showFormStatus(payload.message || 'Thanks for reaching out. Your message has been sent.');
+      })
+      .catch(() => {
+        showFormStatus('Unable to send your message right now. Please try again later.', true);
+      })
+      .finally(() => {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      });
   });
 })();
