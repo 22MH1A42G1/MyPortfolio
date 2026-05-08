@@ -16,6 +16,16 @@
   const journeyStops = Array.from(document.querySelectorAll('.journey-milestone'));
   const form = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
+  const projectCards = Array.from(document.querySelectorAll('.project-card[data-project-title]'));
+  const projectModal = document.getElementById('project-modal');
+  const projectModalImage = document.getElementById('project-modal-image');
+  const projectModalYear = document.getElementById('project-modal-year');
+  const projectModalTitle = document.getElementById('project-modal-title');
+  const projectModalDescription = document.getElementById('project-modal-description');
+  const projectModalTechList = document.getElementById('project-modal-tech-list');
+  const projectModalRepo = document.getElementById('project-modal-repo');
+  const projectModalDemo = document.getElementById('project-modal-demo');
+  const projectModalCloseButtons = Array.from(document.querySelectorAll('[data-project-modal-close]'));
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -210,6 +220,103 @@
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
     });
+  });
+
+  let activeProjectCard = null;
+
+  function closeProjectModal() {
+    if (!projectModal || projectModal.hidden) {
+      return;
+    }
+
+    projectModal.hidden = true;
+    document.body.style.overflow = '';
+
+    if (activeProjectCard) {
+      activeProjectCard.focus();
+    }
+
+    activeProjectCard = null;
+  }
+
+  function openProjectModal(card) {
+    if (!projectModal || !projectModalImage || !projectModalYear || !projectModalTitle || !projectModalDescription || !projectModalTechList || !projectModalRepo || !projectModalDemo) {
+      return;
+    }
+
+    const title = card.dataset.projectTitle || 'Project';
+    const year = card.dataset.projectYear || '';
+    const image = card.dataset.projectImage || '';
+    const imageAlt = card.dataset.projectImageAlt || title;
+    const description = card.dataset.projectDescription || '';
+    const techItems = String(card.dataset.projectTech || '')
+      .split(',')
+      .map((item) => item.trim())
+      .filter(Boolean);
+    const repoUrl = card.dataset.projectRepo || '#';
+    const demoUrl = card.dataset.projectDemo || '';
+
+    projectModalImage.src = image;
+    projectModalImage.alt = imageAlt;
+    projectModalYear.textContent = year;
+    projectModalTitle.textContent = title;
+    projectModalDescription.textContent = description;
+    projectModalRepo.href = repoUrl;
+
+    projectModalTechList.replaceChildren(
+      ...techItems.map((tech) => {
+        const item = document.createElement('li');
+        item.textContent = tech;
+        return item;
+      })
+    );
+
+    if (demoUrl) {
+      projectModalDemo.href = demoUrl;
+      projectModalDemo.classList.remove('is-disabled');
+      projectModalDemo.removeAttribute('aria-disabled');
+    } else {
+      projectModalDemo.href = '#';
+      projectModalDemo.classList.add('is-disabled');
+      projectModalDemo.setAttribute('aria-disabled', 'true');
+    }
+
+    activeProjectCard = card;
+    projectModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    projectModalCloseButtons[0]?.focus();
+  }
+
+  projectCards.forEach((card) => {
+    card.addEventListener('click', () => openProjectModal(card));
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openProjectModal(card);
+      }
+    });
+  });
+
+  projectModalCloseButtons.forEach((button) => {
+    button.addEventListener('click', closeProjectModal);
+  });
+
+  projectModal?.addEventListener('click', (event) => {
+    if (event.target.closest('[data-project-modal-close]')) {
+      closeProjectModal();
+    }
+  });
+
+  projectModalDemo?.addEventListener('click', (event) => {
+    if (projectModalDemo.classList.contains('is-disabled')) {
+      event.preventDefault();
+    }
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && projectModal && !projectModal.hidden) {
+      closeProjectModal();
+    }
   });
 
   const progressBars = document.querySelectorAll('.progress > span');

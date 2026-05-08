@@ -560,10 +560,15 @@ a {
 }
 
 .project-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
     border: 1px solid var(--border);
     background: var(--surface-solid);
     border-radius: var(--radius);
-    padding: 1.2rem;
+    aspect-ratio: 4 / 3;
+    padding: 0;
+    cursor: pointer;
     transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     transform-style: preserve-3d;
     will-change: transform;
@@ -572,29 +577,182 @@ a {
 .project-card:hover {
     border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
     box-shadow: 0 12px 30px rgba(92, 132, 255, 0.2);
+    transform: translateY(-4px);
+}
+
+.project-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
 .project-thumb {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 0.9rem;
-    border: 1px solid var(--border);
+    display: block;
+    border-radius: inherit;
+    margin-bottom: 0;
+    border: 0;
+    transform: scale(1.01);
+    transition: transform 0.35s ease;
 }
 
-.project-top {
+.project-card:hover .project-thumb,
+.project-card:focus-visible .project-thumb {
+    transform: scale(1.06);
+}
+
+.project-overlay {
+    position: absolute;
+    inset: auto 0 0;
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.5rem;
-    margin-bottom: 0.6rem;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(7, 12, 22, 0.14) 28%, rgba(7, 12, 22, 0.82) 100%);
+}
+
+.project-overlay h3 {
+    color: #fff;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .project-year {
+    color: color-mix(in oklab, #fff 84%, var(--accent));
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.project-modal[hidden] {
+    display: none;
+}
+
+.project-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 8, 18, 0.8);
+    backdrop-filter: blur(12px);
+}
+
+.project-modal__dialog {
+    position: relative;
+    z-index: 1;
+    width: min(920px, 100%);
+    max-height: min(92vh, 920px);
+    overflow: auto;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 1.15);
+    background: var(--surface-solid);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+.project-modal__close {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    z-index: 2;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--bg) 75%, black);
+    color: var(--text);
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.project-modal__image {
+    display: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: color-mix(in oklab, var(--bg) 72%, black);
+}
+
+.project-modal__body {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1.15rem 1.2rem 1.35rem;
+}
+
+.project-modal__year {
     color: var(--accent);
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-modal__body h3 {
+    font-size: clamp(1.35rem, 2vw, 2rem);
+}
+
+.project-modal__description {
+    line-height: 1.7;
+}
+
+.project-modal__tech h4 {
+    margin-bottom: 0.55rem;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.project-modal__tech ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.project-modal__tech li {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    background: color-mix(in oklab, var(--accent-2) 10%, transparent);
+    color: var(--text);
+}
+
+.project-modal__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 0.15rem;
+}
+
+.project-modal__actions .btn {
+    min-width: 10rem;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.project-modal__demo.is-disabled {
+    pointer-events: none;
+    opacity: 0.45;
+}
+
+.project-modal__actions .btn:focus-visible,
+.project-modal__close:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 .tag-list {
