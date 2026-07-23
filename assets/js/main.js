@@ -26,6 +26,7 @@
   const projectModalRepo = document.getElementById('project-modal-repo');
   const projectModalDemo = document.getElementById('project-modal-demo');
   const projectModalCloseButtons = Array.from(document.querySelectorAll('[data-project-modal-close]'));
+  const parallaxLayers = Array.from(document.querySelectorAll('.hero-content, .section > .container, .split, .skills-grid, .quick-stats'));
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -95,6 +96,99 @@
 
   sections.forEach((section) => sectionObserver.observe(section));
 
+  function initParticleField() {
+    if (reducedMotion || !document.body) {
+      return;
+    }
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'particle-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+    document.body.prepend(canvas);
+
+    const context = canvas.getContext('2d');
+    if (!context) {
+      return;
+    }
+
+    const particles = [];
+    const particleCount = Math.min(42, Math.max(26, Math.round(window.innerWidth / 32)));
+    let width = 0;
+    let height = 0;
+    let animationFrameId = 0;
+
+    function resizeCanvas() {
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.6);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * pixelRatio);
+      canvas.height = Math.floor(height * pixelRatio);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    }
+
+    function createParticle(index) {
+      const size = 0.8 + Math.random() * 2.6;
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        size,
+        speedX: -0.12 + Math.random() * 0.24,
+        speedY: -0.18 + Math.random() * 0.36,
+        drift: 0.4 + Math.random() * 1.1,
+        phase: Math.random() * Math.PI * 2,
+        hue: index % 3 === 0 ? 215 : index % 3 === 1 ? 255 : 195,
+        alpha: 0.2 + Math.random() * 0.35
+      };
+    }
+
+    function populateParticles() {
+      particles.length = 0;
+      for (let index = 0; index < particleCount; index += 1) {
+        particles.push(createParticle(index));
+      }
+    }
+
+    function drawParticles(timestamp) {
+      context.clearRect(0, 0, width, height);
+      context.globalCompositeOperation = 'lighter';
+
+      particles.forEach((particle) => {
+        particle.phase += 0.012;
+        particle.x += particle.speedX + Math.sin(particle.phase) * 0.07;
+        particle.y += particle.speedY + Math.cos(particle.phase * 0.8) * 0.07;
+
+        if (particle.x < -30) particle.x = width + 30;
+        if (particle.x > width + 30) particle.x = -30;
+        if (particle.y < -30) particle.y = height + 30;
+        if (particle.y > height + 30) particle.y = -30;
+
+        const twinkle = 0.45 + (Math.sin(timestamp * 0.001 + particle.phase) + 1) * 0.25;
+        context.beginPath();
+        context.fillStyle = `hsla(${particle.hue}, 100%, 72%, ${particle.alpha * twinkle})`;
+        context.shadowColor = `hsla(${particle.hue}, 100%, 72%, 0.55)`;
+        context.shadowBlur = 12;
+        context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        context.fill();
+      });
+
+      context.shadowBlur = 0;
+      animationFrameId = window.requestAnimationFrame(drawParticles);
+    }
+
+    resizeCanvas();
+    populateParticles();
+    animationFrameId = window.requestAnimationFrame(drawParticles);
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      populateParticles();
+    }, { passive: true });
+  }
+
+  initParticleField();
+
   function setProjectCardRatio(card) {
     const thumb = card.querySelector('.project-thumb');
     if (!thumb) {
@@ -160,12 +254,36 @@
   runTypingLoop();
 
   if (parallaxEl && !reducedMotion) {
-    const onParallax = () => {
+    let parallaxFrameId = 0;
+
+    const updateParallax = () => {
       const y = Math.min(window.scrollY * 0.18, 90);
       parallaxEl.style.transform = `translate3d(0, ${y}px, 0)`;
+
+      parallaxLayers.forEach((layer, index) => {
+        const rect = layer.getBoundingClientRect();
+        const viewportCenter = window.innerHeight * 0.5;
+        const layerCenter = rect.top + rect.height * 0.5;
+        const distance = layerCenter - viewportCenter;
+        const speed = 0.04 + index * 0.012;
+        const offset = Math.max(Math.min(-distance * speed * 0.06, 20), -20);
+        layer.style.transform = `translate3d(0, ${offset}px, 0)`;
+      });
     };
-    window.addEventListener('scroll', onParallax, { passive: true });
-    onParallax();
+
+    const scheduleParallax = () => {
+      if (parallaxFrameId) {
+        return;
+      }
+      parallaxFrameId = window.requestAnimationFrame(() => {
+        parallaxFrameId = 0;
+        updateParallax();
+      });
+    };
+
+    window.addEventListener('scroll', scheduleParallax, { passive: true });
+    window.addEventListener('resize', scheduleParallax);
+    updateParallax();
   }
 
   function initJourneyDrive() {

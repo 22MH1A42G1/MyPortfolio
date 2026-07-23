@@ -49,6 +49,23 @@ body {
     overflow-x: hidden;
 }
 
+.particle-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.skip-link,
+.site-header,
+main,
+.site-footer {
+    position: relative;
+    z-index: 1;
+}
+
 .skip-link {
     position: absolute;
     left: -999px;
@@ -189,12 +206,13 @@ a {
 .hero-bg {
     position: absolute;
     inset: -8% -5%;
-    /*background:
-        linear-gradient(rgba(10, 16, 34, 0.72), rgba(10, 16, 34, 0.68)),
-        url('../img/hero-bg.jpg') center / cover no-repeat,
+    background:
         radial-gradient(circle at 20% 30%, rgba(114, 198, 255, 0.28), transparent 42%),
-        radial-gradient(circle at 70% 20%, rgba(161, 108, 255, 0.32), transparent 35%),
-        radial-gradient(circle at 60% 75%, rgba(58, 119, 255, 0.2), transparent 45%);*/
+        radial-gradient(circle at 70% 20%, rgba(161, 108, 255, 0.3), transparent 35%),
+        radial-gradient(circle at 60% 75%, rgba(58, 119, 255, 0.18), transparent 45%),
+        linear-gradient(135deg, rgba(10, 16, 34, 0.92), rgba(18, 28, 53, 0.82) 45%, rgba(10, 16, 34, 0.94));
+    background-size: 100% 100%, 120% 120%, 120% 120%, 100% 100%;
+    animation: heroPulse 18s ease-in-out infinite;
     filter: blur(8px);
     z-index: -1;
     transition: transform 0.25s linear;
@@ -1122,6 +1140,14 @@ a:focus-visible {
     transform: translateY(0);
 }
 
+.section > .container,
+.hero-content,
+.split,
+.skills-grid,
+.quick-stats {
+    will-change: transform;
+}
+
 .slide-up {
     transform: translateY(34px);
 }
@@ -1132,6 +1158,16 @@ a:focus-visible {
     }
     to {
         background-position: 0 -56px;
+    }
+}
+
+@keyframes heroPulse {
+    0%,
+    100% {
+        transform: scale(1) translate3d(0, 0, 0);
+    }
+    50% {
+        transform: scale(1.03) translate3d(0, -10px, 0);
     }
 }
 
@@ -1176,6 +1212,14 @@ a:focus-visible {
 
     .quick-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-content,
+    .section > .container,
+    .split,
+    .skills-grid,
+    .quick-stats {
+        transform: none !important;
     }
 
     .timeline-highway {
@@ -1264,6 +1308,10 @@ a:focus-visible {
         width: 14px;
         height: 14px;
         left: -6px;
+    }
+
+    .hero-bg {
+        animation-duration: 24s;
     }
 
     .car-window {
