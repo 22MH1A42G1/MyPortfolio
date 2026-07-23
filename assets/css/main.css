@@ -851,18 +851,82 @@ a {
     color: var(--text);
 }
 
-.certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+.certificates-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.certificates-section::before,
+.certificates-section::after {
+    content: "";
+    position: absolute;
+    inset: auto;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.certificates-section::before {
+    width: 24rem;
+    height: 24rem;
+    top: -7rem;
+    left: -8rem;
+    background: radial-gradient(circle, rgba(101, 165, 255, 0.24), transparent 68%);
+    animation: certificateGlow 12s ease-in-out infinite;
+}
+
+.certificates-section::after {
+    width: 30rem;
+    height: 30rem;
+    right: -10rem;
+    bottom: -12rem;
+    background: radial-gradient(circle, rgba(139, 109, 255, 0.2), transparent 70%);
+    animation: certificateGlow 16s ease-in-out infinite reverse;
+}
+
+.certificates-track {
+    position: relative;
+    z-index: 1;
+    display: flex;
     gap: 1rem;
+    overflow-x: auto;
+    padding: 0.25rem 0.25rem 0.9rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.certificates-track::-webkit-scrollbar {
+    height: 0.6rem;
+}
+
+.certificates-track::-webkit-scrollbar-track {
+    background: color-mix(in oklab, var(--bg-soft) 60%, transparent);
+    border-radius: 999px;
+}
+
+.certificates-track::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border-radius: 999px;
 }
 
 .certificate-card {
+    flex: 0 0 min(340px, 82vw);
+    scroll-snap-align: start;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface-solid);
+    border-radius: calc(var(--radius) + 4px);
+    background: linear-gradient(180deg, color-mix(in oklab, var(--surface-solid) 92%, transparent), var(--surface-solid));
+    box-shadow: var(--shadow);
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.certificate-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
 }
 
 .certificate-card img {
@@ -872,14 +936,55 @@ a {
     object-fit: cover;
 }
 
-.certificate-card h3 {
-    font-size: 1rem;
-    padding: 0.9rem 1rem 1.05rem;
+.certificate-card__body {
+    padding: 1rem 1rem 1.1rem;
 }
 
-.certificate-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(92, 132, 255, 0.2);
+.certificate-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.65rem;
+}
+
+.certificate-card h3 {
+    font-size: 1.02rem;
+    margin-bottom: 0.55rem;
+}
+
+.certificate-meta {
+    font-size: 0.95rem;
+    min-height: 4.4rem;
+}
+
+.certificate-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.9rem;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 0.45rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--accent) 16%, transparent);
+}
+
+.certificate-card:hover,
+.certificate-card:focus-within {
+    transform: translateY(-6px);
+    border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+    box-shadow: 0 18px 40px rgba(92, 132, 255, 0.22);
+}
+
+.certificate-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
 }
 
 .skills-grid {
@@ -1030,6 +1135,18 @@ a:focus-visible {
     }
 }
 
+@keyframes certificateGlow {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 0.72;
+    }
+    50% {
+        transform: translate3d(0, -16px, 0) scale(1.06);
+        opacity: 1;
+    }
+}
+
 @media (max-width: 992px) {
     .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1048,8 +1165,8 @@ a:focus-visible {
         justify-content: space-between;
     }
 
-    .certificates-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .certificate-card {
+        flex-basis: min(320px, 76vw);
     }
 
     .split,
@@ -1118,8 +1235,13 @@ a:focus-visible {
         order: 1;
     }
 
-    .certificates-grid {
-        grid-template-columns: 1fr;
+    .certificates-track {
+        gap: 0.85rem;
+        padding-inline: 0.1rem 0.25rem;
+    }
+
+    .certificate-card {
+        flex-basis: 84vw;
     }
 
     .timeline-highway {
